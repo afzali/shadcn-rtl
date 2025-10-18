@@ -1,5 +1,5 @@
 <script>
-	import LoginForm from "$lib/components/login-form.svelte";
+	import LoginForm from "$lib/components/login-form-03.svelte";
 	import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
 </script>
 

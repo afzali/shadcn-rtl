@@ -1,5 +1,5 @@
 <script>
-	import LoginForm from "$lib/components/login-form.svelte";
+	import LoginForm from "$lib/components/login-form-05.svelte";
 </script>
 
 <div class="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
