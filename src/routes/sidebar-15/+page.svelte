@@ -3,7 +3,7 @@
 	import SidebarRight from "$lib/components/sidebar-right.svelte";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 </script>
 
 <Sidebar.Provider>

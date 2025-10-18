@@ -2,11 +2,11 @@
 	import AppSidebar from "$lib/components/app-sidebar.svelte";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 </script>
 
 <Sidebar.Provider>
-	<AppSidebar />
+	<AppSidebar side="right" />
 	<Sidebar.Inset>
 		<header
 			class="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4"

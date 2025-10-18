@@ -3,11 +3,11 @@
 	import NavActions from "$lib/components/nav-actions.svelte";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 </script>
 
 <Sidebar.Provider>
-	<AppSidebar />
+	<AppSidebar side="right" />
 	<Sidebar.Inset>
 		<header class="flex h-14 shrink-0 items-center gap-2">
 			<div class="flex flex-1 items-center gap-2 px-3">

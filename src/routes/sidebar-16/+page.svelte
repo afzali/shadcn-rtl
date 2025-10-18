@@ -1,5 +1,5 @@
 <script>
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	import SiteHeader from "$lib/components/site-header.svelte";
 	import AppSidebar from "$lib/components/app-sidebar.svelte";
 </script>
@@ -8,7 +8,7 @@
 	<Sidebar.Provider class="flex flex-col">
 		<SiteHeader />
 		<div class="flex flex-1">
-			<AppSidebar />
+			<AppSidebar side="right" />
 			<Sidebar.Inset>
 				<div class="flex flex-1 flex-col gap-4 p-4">
 					<div class="grid auto-rows-min gap-4 md:grid-cols-3">
