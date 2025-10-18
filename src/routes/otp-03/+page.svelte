@@ -1,6 +1,6 @@
 <script>
 	import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
-	import OTPForm from "$lib/components/otp-form.svelte";
+	import OTPForm from "$lib/components/otp-form-03.svelte";
 </script>
 
 <div class="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">

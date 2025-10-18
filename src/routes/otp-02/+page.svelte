@@ -1,5 +1,5 @@
 <script>
-	import OTPForm from "$lib/components/otp-form.svelte";
+	import OTPForm from "$lib/components/otp-form-02.svelte";
 </script>
 
 <div class="flex min-h-svh w-full">
