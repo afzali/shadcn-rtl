@@ -1,5 +1,5 @@
 <script>
-	import SignupForm from "$lib/components/signup-form.svelte";
+	import SignupForm from "$lib/components/signup-form-05.svelte";
 </script>
 
 <div class="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
