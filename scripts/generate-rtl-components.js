@@ -12,7 +12,7 @@ const RTL_DIR = path.join(__dirname, '../src/lib/components/ui-rtl');
 const SPECIAL_RTL_COMPONENTS = {
 	'sheet': ['sheet-content.svelte'],
 	'drawer': ['drawer-content.svelte'],
-	'dropdown-menu': ['dropdown-menu-content.svelte'],
+	'dropdown-menu': ['dropdown-menu-content.svelte', 'dropdown-menu-item.svelte', 'dropdown-menu-shortcut.svelte', 'dropdown-menu-label.svelte'],
 	'select': ['select-content.svelte'],
 	'context-menu': ['context-menu-content.svelte'],
 	'menubar': ['menubar-content.svelte'],

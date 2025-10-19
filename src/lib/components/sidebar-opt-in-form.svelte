@@ -5,19 +5,19 @@
 </script>
 
 <Card.Root class="gap-2 py-4 shadow-none">
-	<Card.Header class="px-4">
-		<Card.Title class="text-sm">Subscribe to our newsletter</Card.Title>
-		<Card.Description>Opt-in to receive updates and news about the sidebar.</Card.Description>
+	<Card.Header class="px-4 text-right">
+		<Card.Title class="text-sm">عضویت در خبرنامه</Card.Title>
+		<Card.Description>برای دریافت به‌روزرسانی‌ها و اخبار مربوط به سایدبار عضو شوید.</Card.Description>
 	</Card.Header>
 	<Card.Content class="px-4">
 		<form>
 			<div class="grid gap-2.5">
-				<Sidebar.Input type="email" placeholder="Email" />
+				<Sidebar.Input type="email" placeholder="ایمیل" />
 				<Button
 					class="bg-sidebar-primary text-sidebar-primary-foreground w-full shadow-none"
 					size="sm"
 				>
-					Subscribe
+					عضویت
 				</Button>
 			</div>
 		</form>

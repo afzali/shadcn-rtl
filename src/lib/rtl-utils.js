@@ -31,6 +31,11 @@ function convertToRtl(classNames) {
 	result = result.replace(/\bborder-r\b/g, 'border-l');
 	result = result.replace(/__RTL_BORDER_L__/g, 'border-r');
 	
+	// Handle ml-auto and mr-auto (must be before ml- and mr-)
+	result = result.replace(/\bml-auto\b/g, '__RTL_ML_AUTO__');
+	result = result.replace(/\bmr-auto\b/g, 'ml-auto');
+	result = result.replace(/__RTL_ML_AUTO__/g, 'mr-auto');
+	
 	// Handle translate-x with arbitrary values - must be done AFTER other mappings
 	// to avoid conflicts. We'll mark them first, then convert at the end.
 	
@@ -54,7 +59,7 @@ function convertToRtl(classNames) {
 		'ps-': 'pe-',
 		'pe-': 'ps-',
 		
-		// Margin
+		// Margin (ml-auto and mr-auto are handled above separately)
 		'ml-': 'mr-',
 		'mr-': 'ml-',
 		'ms-': 'me-',

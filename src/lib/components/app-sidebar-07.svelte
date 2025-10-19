@@ -9,112 +9,112 @@
   import MapIcon from "@lucide/svelte/icons/map";
   import Settings2Icon from "@lucide/svelte/icons/settings-2";
   import SquareTerminalIcon from "@lucide/svelte/icons/square-terminal";
-  // This is sample data.
+  // این داده‌های نمونه هستند.
   const data = {
     user: {
-      name: "shadcn",
+      name: "علی احمدی",
       email: "m@example.com",
       avatar: "/avatars/shadcn.jpg",
     },
     teams: [
       {
-        name: "Acme Inc",
+        name: "شرکت آکمی",
         logo: GalleryVerticalEndIcon,
-        plan: "Enterprise",
+        plan: "سازمانی",
       },
       {
-        name: "Acme Corp.",
+        name: "آکمی کورپ",
         logo: AudioWaveformIcon,
-        plan: "Startup",
+        plan: "استارتاپ",
       },
       {
-        name: "Evil Corp.",
+        name: "ایول کورپ",
         logo: CommandIcon,
-        plan: "Free",
+        plan: "رایگان",
       },
     ],
     navMain: [
       {
-        title: "Playground",
+        title: "محیط آزمایش",
         url: "#",
         icon: SquareTerminalIcon,
         isActive: true,
         items: [
           {
-            title: "History",
+            title: "تاریخچه",
             url: "#",
           },
           {
-            title: "Starred",
+            title: "ستاره‌دار",
             url: "#",
           },
           {
-            title: "Settings",
+            title: "تنظیمات",
             url: "#",
           },
         ],
       },
       {
-        title: "Models",
+        title: "مدل‌ها",
         url: "#",
         icon: BotIcon,
         items: [
           {
-            title: "Genesis",
+            title: "جنسیس",
             url: "#",
           },
           {
-            title: "Explorer",
+            title: "اکسپلورر",
             url: "#",
           },
           {
-            title: "Quantum",
+            title: "کوانتوم",
             url: "#",
           },
         ],
       },
       {
-        title: "Documentation",
+        title: "مستندات",
         url: "#",
         icon: BookOpenIcon,
         items: [
           {
-            title: "Introduction",
+            title: "معرفی",
             url: "#",
           },
           {
-            title: "Get Started",
+            title: "شروع کار",
             url: "#",
           },
           {
-            title: "Tutorials",
+            title: "آموزش‌ها",
             url: "#",
           },
           {
-            title: "Changelog",
+            title: "تغییرات",
             url: "#",
           },
         ],
       },
       {
-        title: "Settings",
+        title: "تنظیمات",
         url: "#",
         icon: Settings2Icon,
         items: [
           {
-            title: "General",
+            title: "عمومی",
             url: "#",
           },
           {
-            title: "Team",
+            title: "تیم",
             url: "#",
           },
           {
-            title: "Billing",
+            title: "صورتحساب",
             url: "#",
           },
           {
-            title: "Limits",
+            title: "محدودیت‌ها",
             url: "#",
           },
         ],
@@ -122,17 +122,17 @@
     ],
     projects: [
       {
-        name: "Design Engineering",
+        name: "مهندسی طراحی",
         url: "#",
         icon: FrameIcon,
       },
       {
-        name: "Sales & Marketing",
+        name: "فروش و بازاریابی",
         url: "#",
         icon: ChartPieIcon,
       },
       {
-        name: "Travel",
+        name: "سفر",
         url: "#",
         icon: MapIcon,
       },
@@ -140,11 +140,11 @@
   };
 </script>
 <script lang="ts">
-  import NavMain from "./nav-main.svelte";
+  import NavMain from "./nav-main-02.svelte";
   import NavProjects from "./nav-projects.svelte";
   import NavUser from "./nav-user.svelte";
-  import TeamSwitcher from "./team-switcher.svelte";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import TeamSwitcher from "./team-switcher-01.svelte";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import type { ComponentProps } from "svelte";
   let {
     ref = $bindable(null),
