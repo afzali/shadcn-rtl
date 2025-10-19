@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import type { ComponentProps } from "svelte";
   // This is sample data.
   const data = {
@@ -146,14 +146,14 @@
 <Sidebar.Root bind:ref {...restProps}>
   <Sidebar.Content>
     <Sidebar.Group>
-      <Sidebar.GroupLabel>Table of Contents</Sidebar.GroupLabel>
+      <Sidebar.GroupLabel>فهرست مطالب</Sidebar.GroupLabel>
       <Sidebar.GroupContent>
         <Sidebar.Menu>
           {#each data.navMain as item (item.title)}
             <Sidebar.MenuItem>
-              <Sidebar.MenuButton class="font-medium">
+              <Sidebar.MenuButton class="font-medium text-right">
                 {#snippet child({ props })}
-                  <a href={item.url} {...props}>
+                  <a href={item.url} {...props} class="{props.class} text-right">
                     {item.title}
                   </a>
                 {/snippet}
