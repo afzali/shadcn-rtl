@@ -141,7 +141,8 @@
   };
 </script>
 <script lang="ts">
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import SearchForm from "./search-form-01.svelte";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
   import type { ComponentProps } from "svelte";
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
@@ -158,9 +159,9 @@
               >
                 <GalleryVerticalEndIcon class="size-4" />
               </div>
-              <div class="flex flex-col gap-0.5 leading-none">
-                <span class="font-medium">Documentation</span>
-                <span class="">v1.0.0</span>
+              <div class="flex flex-col gap-0.5 leading-none text-right flex-1">
+                <span class="font-medium">مستندات</span>
+                <span class="text-xs opacity-70">نسخه 1.0.0</span>
               </div>
             </a>
           {/snippet}

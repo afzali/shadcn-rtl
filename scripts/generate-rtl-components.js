@@ -18,7 +18,7 @@ const SPECIAL_RTL_COMPONENTS = {
 	'menubar': ['menubar-content.svelte'],
 	'breadcrumb': ['breadcrumb-separator.svelte'],
 	'pagination': ['pagination-content.svelte', 'pagination-prev.svelte', 'pagination-next.svelte'],
-	'sidebar': ['sidebar-content.svelte'],
+	'sidebar': ['sidebar-content.svelte', 'sidebar-menu-sub.svelte', 'sidebar-menu-sub-button.svelte'],
 	'navigation-menu': ['navigation-menu-content.svelte'],
 	'calendar': ['calendar.svelte'],
 	'range-calendar': ['range-calendar.svelte'],

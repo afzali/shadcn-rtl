@@ -17,6 +17,19 @@ function convertToRtl(classNames) {
 	if (!classNames) return classNames;
 	
 	let result = classNames;
+	const original = classNames;
+	
+	// First, handle simple translate-x-px
+	// In RTL: -translate-x-px becomes translate-x-px (remove negative)
+	// and translate-x-px becomes -translate-x-px (add negative)
+	result = result.replace(/\b-translate-x-px\b/g, '__RTL_REMOVE_NEG__');
+	result = result.replace(/\btranslate-x-px\b/g, '-translate-x-px');
+	result = result.replace(/__RTL_REMOVE_NEG__/g, 'translate-x-px');
+	
+	// Handle border-l and border-r (without suffix)
+	result = result.replace(/\bborder-l\b/g, '__RTL_BORDER_L__');
+	result = result.replace(/\bborder-r\b/g, 'border-l');
+	result = result.replace(/__RTL_BORDER_L__/g, 'border-r');
 	
 	// Handle translate-x with arbitrary values - must be done AFTER other mappings
 	// to avoid conflicts. We'll mark them first, then convert at the end.
@@ -34,6 +47,7 @@ function convertToRtl(classNames) {
 	);
 	
 	const rtlMappings = {
+		
 		// Padding
 		'pl-': 'pr-',
 		'pr-': 'pl-',
@@ -46,9 +60,7 @@ function convertToRtl(classNames) {
 		'ms-': 'me-',
 		'me-': 'ms-',
 		
-		// Border
-		'border-l': 'border-r',
-		'border-r': 'border-l',
+		// Border (border-l and border-r are handled above separately)
 		'border-s': 'border-e',
 		'border-e': 'border-s',
 		
@@ -94,12 +106,22 @@ function convertToRtl(classNames) {
 	
 	// Apply RTL mappings
 	for (const [ltr, rtl] of Object.entries(rtlMappings)) {
-		const regex = new RegExp(ltr.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
+		// Use word boundary to match complete class names
+		const escapedLtr = ltr.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+		const regex = new RegExp(`\\b${escapedLtr}(?=\\s|$)`, 'g');
 		result = result.replace(regex, rtl);
 	}
 	
 	// Finally, convert marked translate-x to negative
 	result = result.replace(/__RTL_FLIP__translate-x-/g, '-translate-x-');
+	
+	// Debug log
+	if (original.includes('border-l') || original.includes('translate-x-px')) {
+		console.log('RTL Conversion:');
+		console.log('  Original:', original);
+		console.log('  Result:  ', result);
+		console.log('  Changed: ', original !== result);
+	}
 	
 	return result;
 }

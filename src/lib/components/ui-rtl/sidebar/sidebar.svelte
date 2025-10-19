@@ -1,6 +1,5 @@
 <script>
 	import * as Sheet from "$lib/components/ui/sheet/index.js";
-	import { cn } from "$lib/utils.js";
 	import { cnRtl } from "$lib/rtl-utils.js";
 	import { SIDEBAR_WIDTH_MOBILE } from "./constants.js";
 	import { useSidebar } from "./context.svelte.js";
@@ -75,7 +74,7 @@
 		></div>
 		<div
 			data-slot="sidebar-container"
-			class={cn(
+			class={cnRtl(
 				"w-(--sidebar-width) fixed inset-y-0 z-10 hidden h-svh transition-[left,right,width] duration-200 ease-linear md:flex",
 				side === "left"
 					? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"

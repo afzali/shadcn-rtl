@@ -142,7 +142,7 @@
   };
 </script>
 <script lang="ts">
-  import SearchForm from "./search-form.svelte";
+  import SearchForm from "./search-form-01.svelte";
   import VersionSwitcher from "./version-switcher.svelte";
   import * as Collapsible from "$lib/components/ui/collapsible/index.js";
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
@@ -167,7 +167,7 @@
               <Collapsible.Trigger {...props}>
                 {item.title}
                 <ChevronRightIcon
-                  class="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
+                  class="ms-auto rotate-180 transition-transform group-data-[state=open]/collapsible:rotate-90"
                 />
               </Collapsible.Trigger>
             {/snippet}
