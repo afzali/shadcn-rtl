@@ -14,40 +14,40 @@
   const data = {
     teams: [
       {
-        name: "Acme Inc",
+        name: "شرکت آکمی",
         logo: CommandIcon,
-        plan: "Enterprise",
+        plan: "سازمانی",
       },
       {
-        name: "Acme Corp.",
+        name: "آکمی کورپ",
         logo: AudioWaveformIcon,
-        plan: "Startup",
+        plan: "نوپا",
       },
       {
-        name: "Evil Corp.",
+        name: "ایول کورپ",
         logo: CommandIcon,
-        plan: "Free",
+        plan: "رایگان",
       },
     ],
     navMain: [
       {
-        title: "Search",
+        title: "جستجو",
         url: "#",
         icon: SearchIcon,
       },
       {
-        title: "Ask AI",
+        title: "سوال از هوش مصنوعی",
         url: "#",
         icon: SparklesIcon,
       },
       {
-        title: "Home",
+        title: "خانه",
         url: "#",
         icon: HouseIcon,
         isActive: true,
       },
       {
-        title: "Inbox",
+        title: "صندوق ورودی",
         url: "#",
         icon: InboxIcon,
         badge: "10",
@@ -55,184 +55,184 @@
     ],
     navSecondary: [
       {
-        title: "Calendar",
+        title: "تقویم",
         url: "#",
         icon: CalendarIcon,
       },
       {
-        title: "Settings",
+        title: "تنظیمات",
         url: "#",
         icon: Settings2Icon,
       },
       {
-        title: "Templates",
+        title: "قالب‌ها",
         url: "#",
         icon: BlocksIcon,
       },
       {
-        title: "Trash",
+        title: "سطل زباله",
         url: "#",
         icon: Trash2Icon,
       },
       {
-        title: "Help",
+        title: "راهنما",
         url: "#",
         icon: MessageCircleQuestionIcon,
       },
     ],
     favorites: [
       {
-        name: "Project Management & Task Tracking",
+        name: "مدیریت پروژه و پیگیری وظایف",
         url: "#",
         emoji: "📊",
       },
       {
-        name: "Family Recipe Collection & Meal Planning",
+        name: "مجموعه دستور غذایی خانوادگی",
         url: "#",
         emoji: "🍳",
       },
       {
-        name: "Fitness Tracker & Workout Routines",
+        name: "پیگیر آمادگی جسمانی",
         url: "#",
         emoji: "💪",
       },
       {
-        name: "Book Notes & Reading List",
+        name: "یادداشت کتاب و لیست خواندن",
         url: "#",
         emoji: "📚",
       },
       {
-        name: "Sustainable Gardening Tips & Plant Care",
+        name: "نکات باغبانی پایدار",
         url: "#",
         emoji: "🌱",
       },
       {
-        name: "Language Learning Progress & Resources",
+        name: "پیشرفت یادگیری زبان",
         url: "#",
         emoji: "🗣️",
       },
       {
-        name: "Home Renovation Ideas & Budget Tracker",
+        name: "ایده‌های بازسازی خانه",
         url: "#",
         emoji: "🏠",
       },
       {
-        name: "Personal Finance & Investment Portfolio",
+        name: "امور مالی شخصی",
         url: "#",
         emoji: "💰",
       },
       {
-        name: "Movie & TV Show Watchlist with Reviews",
+        name: "لیست فیلم و سریال",
         url: "#",
         emoji: "🎬",
       },
       {
-        name: "Daily Habit Tracker & Goal Setting",
+        name: "پیگیر عادت روزانه",
         url: "#",
         emoji: "✅",
       },
     ],
     workspaces: [
       {
-        name: "Personal Life Management",
+        name: "مدیریت زندگی شخصی",
         emoji: "🏠",
         pages: [
           {
-            name: "Daily Journal & Reflection",
+            name: "خاطرات روزانه",
             url: "#",
             emoji: "📔",
           },
           {
-            name: "Health & Wellness Tracker",
+            name: "پیگیر سلامتی",
             url: "#",
             emoji: "🍏",
           },
           {
-            name: "Personal Growth & Learning Goals",
+            name: "رشد شخصی و اهداف",
             url: "#",
             emoji: "🌟",
           },
         ],
       },
       {
-        name: "Professional Development",
+        name: "توسعه حرفه‌ای",
         emoji: "💼",
         pages: [
           {
-            name: "Career Objectives & Milestones",
+            name: "اهداف شغلی",
             url: "#",
             emoji: "🎯",
           },
           {
-            name: "Skill Acquisition & Training Log",
+            name: "یادگیری مهارت",
             url: "#",
             emoji: "🧠",
           },
           {
-            name: "Networking Contacts & Events",
+            name: "شبکه‌سازی",
             url: "#",
             emoji: "🤝",
           },
         ],
       },
       {
-        name: "Creative Projects",
+        name: "پروژه‌های خلاقانه",
         emoji: "🎨",
         pages: [
           {
-            name: "Writing Ideas & Story Outlines",
+            name: "ایده‌های نوشتاری",
             url: "#",
             emoji: "✍️",
           },
           {
-            name: "Art & Design Portfolio",
+            name: "نمونه‌کار هنری",
             url: "#",
             emoji: "🖼️",
           },
           {
-            name: "Music Composition & Practice Log",
+            name: "آهنگسازی موسیقی",
             url: "#",
             emoji: "🎵",
           },
         ],
       },
       {
-        name: "Home Management",
+        name: "مدیریت خانه",
         emoji: "🏡",
         pages: [
           {
-            name: "Household Budget & Expense Tracking",
+            name: "بودجه خانوار",
             url: "#",
             emoji: "💰",
           },
           {
-            name: "Home Maintenance Schedule & Tasks",
+            name: "برنامه نگهداری خانه",
             url: "#",
             emoji: "🔧",
           },
           {
-            name: "Family Calendar & Event Planning",
+            name: "تقویم خانوادگی",
             url: "#",
             emoji: "📅",
           },
         ],
       },
       {
-        name: "Travel & Adventure",
+        name: "سفر و ماجراجویی",
         emoji: "🧳",
         pages: [
           {
-            name: "Trip Planning & Itineraries",
+            name: "برنامه‌ریزی سفر",
             url: "#",
             emoji: "🗺️",
           },
           {
-            name: "Travel Bucket List & Inspiration",
+            name: "لیست آرزوهای سفر",
             url: "#",
             emoji: "🌎",
           },
           {
-            name: "Travel Journal & Photo Gallery",
+            name: "خاطرات سفر",
             url: "#",
             emoji: "📸",
           },
@@ -243,11 +243,11 @@
 </script>
 <script lang="ts">
   import NavFavorites from "./nav-favorites.svelte";
-  import NavMain from "./nav-main.svelte";
+  import NavMain from "./nav-main-03.svelte";
   import NavSecondary from "./nav-secondary.svelte";
   import NavWorkspaces from "./nav-workspaces.svelte";
   import TeamSwitcher from "./team-switcher.svelte";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import type { ComponentProps } from "svelte";
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>

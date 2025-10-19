@@ -133,7 +133,7 @@
 <script lang="ts">
   import NavMain from "./nav-main-01.svelte";
   import SidebarOptInForm from "./sidebar-opt-in-form.svelte";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
   import type { ComponentProps } from "svelte";
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();

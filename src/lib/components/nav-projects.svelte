@@ -3,8 +3,8 @@
 	import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
 	import ShareIcon from "@lucide/svelte/icons/share";
 	import Trash2Icon from "@lucide/svelte/icons/trash-2";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
+	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
 
 	let {
 		projects,
@@ -14,7 +14,7 @@
 </script>
 
 <Sidebar.Group class="group-data-[collapsible=icon]:hidden">
-	<Sidebar.GroupLabel>Projects</Sidebar.GroupLabel>
+	<Sidebar.GroupLabel>پروژه‌ها</Sidebar.GroupLabel>
 	<Sidebar.Menu>
 		{#each projects as item (item.name)}
 			<Sidebar.MenuItem>
@@ -31,27 +31,27 @@
 						{#snippet child({ props })}
 							<Sidebar.MenuAction showOnHover {...props}>
 								<EllipsisIcon />
-								<span class="sr-only">More</span>
+								<span class="sr-only">بیشتر</span>
 							</Sidebar.MenuAction>
 						{/snippet}
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content
 						class="w-48"
-						side={sidebar.isMobile ? "bottom" : "right"}
+						side={sidebar.isMobile ? "bottom" : "left"}
 						align={sidebar.isMobile ? "end" : "start"}
 					>
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<FolderIcon class="text-muted-foreground" />
-							<span>View Project</span>
+							<span>مشاهده پروژه</span>
 						</DropdownMenu.Item>
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<ShareIcon class="text-muted-foreground" />
-							<span>Share Project</span>
+							<span>اشتراک‌گذاری پروژه</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<Trash2Icon class="text-muted-foreground" />
-							<span>Delete Project</span>
+							<span>حذف پروژه</span>
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Root>
@@ -60,7 +60,7 @@
 		<Sidebar.MenuItem>
 			<Sidebar.MenuButton>
 				<EllipsisIcon />
-				<span>More</span>
+				<span>بیشتر</span>
 			</Sidebar.MenuButton>
 		</Sidebar.MenuItem>
 	</Sidebar.Menu>

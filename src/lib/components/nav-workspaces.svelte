@@ -1,10 +1,10 @@
 <script>
-	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+	import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
 	import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
 	import PlusIcon from "@lucide/svelte/icons/plus";
 
-	import * as Collapsible from "$lib/components/ui/collapsible/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Collapsible from "$lib/components/ui-rtl/collapsible/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 
 	let {
 		workspaces,
@@ -13,7 +13,7 @@
 </script>
 
 <Sidebar.Group>
-	<Sidebar.GroupLabel>Workspaces</Sidebar.GroupLabel>
+	<Sidebar.GroupLabel>فضاهای کاری</Sidebar.GroupLabel>
 	<Sidebar.GroupContent>
 		<Sidebar.Menu>
 			{#each workspaces as workspace (workspace.name)}
@@ -31,14 +31,14 @@
 							{#snippet child({ props })}
 								<Sidebar.MenuAction
 									{...props}
-									class="bg-sidebar-accent text-sidebar-accent-foreground left-2 data-[state=open]:rotate-90"
+									class="left-2 data-[state=open]:-rotate-90"
 									showOnHover
 								>
-									<ChevronRightIcon />
+									<ChevronLeftIcon />
 								</Sidebar.MenuAction>
 							{/snippet}
 						</Collapsible.Trigger>
-						<Sidebar.MenuAction showOnHover>
+						<Sidebar.MenuAction showOnHover class="!left-1 !right-auto">
 							<PlusIcon />
 						</Sidebar.MenuAction>
 						<Collapsible.Content>
@@ -59,7 +59,7 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton class="text-sidebar-foreground/70">
 					<EllipsisIcon />
-					<span>More</span>
+					<span>بیشتر</span>
 				</Sidebar.MenuButton>
 			</Sidebar.MenuItem>
 		</Sidebar.Menu>

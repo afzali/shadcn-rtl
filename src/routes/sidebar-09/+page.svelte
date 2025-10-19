@@ -1,6 +1,6 @@
 <script>
 	import AppSidebar from "$lib/components/app-sidebar-09.svelte";
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
+	import * as Breadcrumb from "$lib/components/ui-rtl/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 </script>
@@ -9,16 +9,16 @@
 	<AppSidebar side="right" />
 	<Sidebar.Inset>
 		<header class="bg-background sticky top-0 flex shrink-0 items-center gap-2 border-b p-4">
-			<Sidebar.Trigger class="-ml-1" />
-			<Separator orientation="vertical" class="mr-2 data-[orientation=vertical]:h-4" />
+			<Sidebar.Trigger class="-ms-1" />
+			<Separator orientation="vertical" class="ms-2 data-[orientation=vertical]:h-4" />
 			<Breadcrumb.Root>
 				<Breadcrumb.List>
 					<Breadcrumb.Item class="hidden md:block">
-						<Breadcrumb.Link href="#">All Inboxes</Breadcrumb.Link>
+						<Breadcrumb.Link href="#">همه صندوق‌ها</Breadcrumb.Link>
 					</Breadcrumb.Item>
 					<Breadcrumb.Separator class="hidden md:block" />
 					<Breadcrumb.Item>
-						<Breadcrumb.Page>Inbox</Breadcrumb.Page>
+						<Breadcrumb.Page>صندوق ورودی</Breadcrumb.Page>
 					</Breadcrumb.Item>
 				</Breadcrumb.List>
 			</Breadcrumb.Root>

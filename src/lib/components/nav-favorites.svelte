@@ -1,7 +1,7 @@
 <script>
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { useSidebar } from "$lib/components/ui/sidebar/index.js";
+	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
+	import { useSidebar } from "$lib/components/ui-rtl/sidebar/index.js";
 	import ArrowUpRightIcon from "@lucide/svelte/icons/arrow-up-right";
 	import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
 	import LinkIcon from "@lucide/svelte/icons/link";
@@ -14,7 +14,7 @@
 </script>
 
 <Sidebar.Group class="group-data-[collapsible=icon]:hidden">
-	<Sidebar.GroupLabel>Favorites</Sidebar.GroupLabel>
+	<Sidebar.GroupLabel>علاقه‌مندی‌ها</Sidebar.GroupLabel>
 	<Sidebar.Menu>
 		{#each favorites as item (item.name)}
 			<Sidebar.MenuItem>
@@ -31,32 +31,32 @@
 						{#snippet child({ props })}
 							<Sidebar.MenuAction showOnHover {...props}>
 								<EllipsisIcon />
-								<span class="sr-only">More</span>
+								<span class="sr-only">بیشتر</span>
 							</Sidebar.MenuAction>
 						{/snippet}
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content
 						class="w-56 rounded-lg"
-						side={sidebar.isMobile ? "bottom" : "right"}
+						side={sidebar.isMobile ? "bottom" : "left"}
 						align={sidebar.isMobile ? "end" : "start"}
 					>
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<StarOffIcon class="text-muted-foreground" />
-							<span>Remove from Favorites</span>
+							<span>حذف از علاقه‌مندی‌ها</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<LinkIcon class="text-muted-foreground" />
-							<span>Copy Link</span>
+							<span>کپی لینک</span>
 						</DropdownMenu.Item>
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<ArrowUpRightIcon class="text-muted-foreground" />
-							<span>Open in New Tab</span>
+							<span>باز کردن در تب جدید</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
-						<DropdownMenu.Item>
+						<DropdownMenu.Item class="text-left">
 							<Trash2Icon class="text-muted-foreground" />
-							<span>Delete</span>
+							<span>حذف</span>
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Root>
@@ -65,7 +65,7 @@
 		<Sidebar.MenuItem>
 			<Sidebar.MenuButton class="text-sidebar-foreground/70">
 				<EllipsisIcon />
-				<span>More</span>
+				<span>بیشتر</span>
 			</Sidebar.MenuButton>
 		</Sidebar.MenuItem>
 	</Sidebar.Menu>

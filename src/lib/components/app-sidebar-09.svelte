@@ -4,40 +4,40 @@
   import InboxIcon from "@lucide/svelte/icons/inbox";
   import SendIcon from "@lucide/svelte/icons/send";
   import Trash2Icon from "@lucide/svelte/icons/trash-2";
-  // This is sample data
+  // این داده‌های نمونه هستند
   const data = {
     user: {
-      name: "shadcn",
+      name: "علی احمدی",
       email: "m@example.com",
       avatar: "/avatars/shadcn.jpg",
     },
     navMain: [
       {
-        title: "Inbox",
+        title: "صندوق ورودی",
         url: "#",
         icon: InboxIcon,
         isActive: true,
       },
       {
-        title: "Drafts",
+        title: "پیش‌نویس‌ها",
         url: "#",
         icon: FileIcon,
         isActive: false,
       },
       {
-        title: "Sent",
+        title: "ارسال‌شده",
         url: "#",
         icon: SendIcon,
         isActive: false,
       },
       {
-        title: "Junk",
+        title: "هرزنامه",
         url: "#",
         icon: ArchiveXIcon,
         isActive: false,
       },
       {
-        title: "Trash",
+        title: "سطل زباله",
         url: "#",
         icon: Trash2Icon,
         isActive: false,
@@ -45,84 +45,84 @@
     ],
     mails: [
       {
-        name: "William Smith",
+        name: "علی رضایی",
         email: "williamsmith@example.com",
-        subject: "Meeting Tomorrow",
+        subject: "ملاقات فردا",
         date: "09:34 AM",
-        teaser: "Hi team, just a reminder about our meeting tomorrow at 10 AM.\nPlease come prepared with your project updates.",
+        teaser: "سلام تیم، فقط یادآوری در مورد جلسه فردا در ساعت 10 صبح.\nلطفا با به‌روزرسانی پروژه‌های خود آماده شوید.",
       },
       {
-        name: "Alice Smith",
+        name: "مریم احمدی",
         email: "alicesmith@example.com",
-        subject: "Re: Project Update",
-        date: "Yesterday",
-        teaser: "Thanks for the update. The progress looks great so far.\nLet's schedule a call to discuss the next steps.",
+        subject: "Re: به‌روزرسانی پروژه",
+        date: "دیروز",
+        teaser: "ممنون از به‌روزرسانی. پیشرفت تا الان خوب به نظر می‌رسه.\nبیایید برای بحث در مورد گام‌های بعدی تماس تلفنی برنامه‌ریزی کنیم.",
       },
       {
-        name: "Bob Johnson",
+        name: "رضا محمدی",
         email: "bobjohnson@example.com",
-        subject: "Weekend Plans",
-        date: "2 days ago",
-        teaser: "Hey everyone! I'm thinking of organizing a team outing this weekend.\nWould you be interested in a hiking trip or a beach day?",
+        subject: "برنامه‌های آخر هفته",
+        date: "2 روز پیش",
+        teaser: "سلام همه! دارم فکر می‌کنم برای یک گشت و گذار تیمی آخر هفته برنامه‌ریزی کنم.\nآیا علاقه دارید به یک گشت کوهنوردی یا روز ساحلی بروید؟",
       },
       {
-        name: "Emily Davis",
+        name: "فاطمه کریمی",
         email: "emilydavis@example.com",
-        subject: "Re: Question about Budget",
-        date: "2 days ago",
-        teaser: "I've reviewed the budget numbers you sent over.\nCan we set up a quick call to discuss some potential adjustments?",
+        subject: "Re: سوال در مورد بودجه",
+        date: "2 روز پیش",
+        teaser: "شما اعداد بودجه‌ای که فرستادید رو بررسی کردم.\nمی‌تونیم برای بحث در مورد تعدیلات احتمالی تماس تلفنی برنامه‌ریزی کنیم؟",
       },
       {
-        name: "Michael Wilson",
+        name: "حسین رضوی",
         email: "michaelwilson@example.com",
-        subject: "Important Announcement",
-        date: "1 week ago",
-        teaser: "Please join us for an all-hands meeting this Friday at 3 PM.\nWe have some exciting news to share about the company's future.",
+        subject: "اعلامیه مهم",
+        date: "1 هفته پیش",
+        teaser: "لطفا برای جلسه تمام کارکنان جمعه ساعت 3 عصر با ما همراه شوید.\nما خبرهای جالب و هیجان‌انگیزی در مورد آینده شرکت داریم.",
       },
       {
-        name: "Sarah Brown",
+        name: "سارا حسینی",
         email: "sarahbrown@example.com",
-        subject: "Re: Feedback on Proposal",
-        date: "1 week ago",
-        teaser: "Thank you for sending over the proposal. I've reviewed it and have some thoughts.\nCould we schedule a meeting to discuss my feedback in detail?",
+        subject: "Re: بازخورد در مورد پیشنهاد",
+        date: "1 هفته پیش",
+        teaser: "ممنون که پیشنهاد رو فرستادی. من اون رو بررسی کردم و نظراتی دارم.\nمی‌تونیم جلسه‌ای برای بحث در مورد نظراتم برنامه‌ریزی کنیم؟",
       },
       {
-        name: "David Lee",
+        name: "داود عباسی",
         email: "davidlee@example.com",
-        subject: "New Project Idea",
-        date: "1 week ago",
-        teaser: "I've been brainstorming and came up with an interesting project concept.\nDo you have time this week to discuss its potential impact and feasibility?",
+        subject: "پروژه جدید",
+        date: "1 هفته پیش",
+        teaser: "من دارم به یک مفهوم پروژه جالب فکر می‌کنم.\nآیا این هفته وقت داری تا در مورد تأثیر و امکان‌پذیری اون با هم بحث کنیم؟",
       },
       {
-        name: "Olivia Wilson",
+        name: "نیلوفر محمدی",
         email: "oliviawilson@example.com",
-        subject: "Vacation Plans",
-        date: "1 week ago",
-        teaser: "Just a heads up that I'll be taking a two-week vacation next month.\nI'll make sure all my projects are up to date before I leave.",
+        subject: "برنامه‌های تعطیلات",
+        date: "1 هفته پیش",
+        teaser: "فقط یادآوری که من ماه آینده دو هفته تعطیلات دارم.\nمن مطمئن میشم که پروژه‌هام قبل از رفتنم به‌روز باشه.",
       },
       {
-        name: "James Martin",
+        name: "محمد رضایی",
         email: "jamesmartin@example.com",
-        subject: "Re: Conference Registration",
-        date: "1 week ago",
-        teaser: "I've completed the registration for the upcoming tech conference.\nLet me know if you need any additional information from my end.",
+        subject: "Re: ثبت‌نام در کنفرانس",
+        date: "1 هفته پیش",
+        teaser: "من ثبت‌نام برای کنفرانس تکنولوژی رو تکمیل کردم.\nاگر نیاز به اطلاعات اضافی از طرف من دارید به من اطلاع بدید.",
       },
       {
-        name: "Sophia White",
+        name: "زهرا بیاتی",
         email: "sophiawhite@example.com",
-        subject: "Team Dinner",
-        date: "1 week ago",
-        teaser: "To celebrate our recent project success, I'd like to organize a team dinner.\nAre you available next Friday evening? Please let me know your preferences.",
+        subject: "شام تیمی",
+        date: "1 هفته پیش",
+        teaser: "برای جشن موفقیت پروژه اخیر، می‌خوام شام تیمی برنامه‌ریزی کنم.\nآیا شب جمعه این هفته در دسترس هستید؟ لطفا ترجیحات خودتون رو به من اطلاع بدید.",
       },
     ],
   };
 </script>
 <script lang="ts">
   import NavUser from "./nav-user.svelte";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { useSidebar } from "$lib/components/ui/sidebar/context.svelte.js";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-  import { Switch } from "$lib/components/ui/switch/index.js";
+  import { Label } from "$lib/components/ui-rtl/label/index.js";
+  import { useSidebar } from "$lib/components/ui-rtl/sidebar/context.svelte.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
+  import { Switch } from "$lib/components/ui-rtl/switch/index.js";
   import CommandIcon from "@lucide/svelte/icons/command";
   import type { ComponentProps } from "svelte";
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
@@ -136,9 +136,9 @@
   class="overflow-hidden [&>[data-sidebar=sidebar]]:flex-row"
   {...restProps}
 >
-  <!-- This is the first sidebar -->
-  <!-- We disable collapsible and adjust width to icon. -->
-  <!-- This will make the sidebar appear as icons. -->
+  <!-- این اولین نوار کناری است -->
+  <!-- ما قابلیت 收缩 را غیرفعال می‌کنیم و عرض را به آیکون تنظیم می‌کنیم -->
+  <!-- این باعث می‌شود نوار کناری به شکل آیکون‌ها ظاهر شود -->
   <Sidebar.Root collapsible="none" class="!w-[calc(var(--sidebar-width-icon)_+_1px)] border-r">
     <Sidebar.Header>
       <Sidebar.Menu>
@@ -152,8 +152,8 @@
                   <CommandIcon class="size-4" />
                 </div>
                 <div class="grid flex-1 text-left text-sm leading-tight">
-                  <span class="truncate font-medium">Acme Inc</span>
-                  <span class="truncate text-xs">Enterprise</span>
+                  <span class="truncate font-medium">شرکت آکمی</span>
+                  <span class="truncate text-xs">سازمانی</span>
                 </div>
               </a>
             {/snippet}
@@ -199,8 +199,8 @@
       <NavUser user={data.user} />
     </Sidebar.Footer>
   </Sidebar.Root>
-  <!-- This is the second sidebar -->
-  <!-- We disable collapsible and let it fill remaining space -->
+  <!-- این دومین نوار کناری است -->
+  <!-- ما قابلیت 收缩 را غیرفعال می‌کنیم و اجازه می‌دهیم فضای باقیمانده را پر کند -->
   <Sidebar.Root collapsible="none" class="hidden flex-1 md:flex">
     <Sidebar.Header class="gap-3.5 border-b p-4">
       <div class="flex w-full items-center justify-between">
@@ -208,11 +208,11 @@
           {activeItem.title}
         </div>
         <Label class="flex items-center gap-2 text-sm">
-          <span>Unreads</span>
+          <span>خوانده‌نشده</span>
           <Switch class="shadow-none" />
         </Label>
       </div>
-      <Sidebar.Input placeholder="Type to search..." />
+      <Sidebar.Input placeholder="جستجو کنید..." />
     </Sidebar.Header>
     <Sidebar.Content>
       <Sidebar.Group class="px-0">
@@ -224,7 +224,7 @@
             >
               <div class="flex w-full items-center gap-2">
                 <span>{mail.name}</span>
-                <span class="ml-auto text-xs">{mail.date}</span>
+                <span class="ms-auto text-xs">{mail.date}</span>
               </div>
               <span class="font-medium">{mail.subject}</span>
               <span class="line-clamp-2 w-[260px] whitespace-break-spaces text-xs">

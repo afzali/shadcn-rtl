@@ -16,61 +16,61 @@
 	const data = [
 		[
 			{
-				label: "Customize Page",
+				label: "سفارشی‌سازی صفحه",
 				icon: Settings2Icon,
 			},
 			{
-				label: "Turn into wiki",
+				label: "تبدیل به ویکی",
 				icon: FileTextIcon,
 			},
 		],
 		[
 			{
-				label: "Copy Link",
+				label: "کپی لینک",
 				icon: LinkIcon,
 			},
 			{
-				label: "Duplicate",
+				label: "تکثیر",
 				icon: CopyIcon,
 			},
 			{
-				label: "Move to",
+				label: "انتقال به",
 				icon: CornerUpRightIcon,
 			},
 			{
-				label: "Move to Trash",
+				label: "انتقال به زباله‌دان",
 				icon: Trash2Icon,
 			},
 		],
 		[
 			{
-				label: "Undo",
+				label: "برگشت",
 				icon: CornerUpLeftIcon,
 			},
 			{
-				label: "View analytics",
+				label: "مشاهده آمار",
 				icon: ChartLineIcon,
 			},
 			{
-				label: "Version History",
+				label: "تاریخچه نسخه‌ها",
 				icon: GalleryVerticalEndIcon,
 			},
 			{
-				label: "Show delete pages",
+				label: "نمایش صفحات حذف‌شده",
 				icon: TrashIcon,
 			},
 			{
-				label: "Notifications",
+				label: "اعلان‌ها",
 				icon: BellIcon,
 			},
 		],
 		[
 			{
-				label: "Import",
+				label: "وارد کردن",
 				icon: ArrowUpIcon,
 			},
 			{
-				label: "Export",
+				label: "خروجی گرفتن",
 				icon: ArrowDownIcon,
 			},
 		],
@@ -79,8 +79,8 @@
 
 <script>
 	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Popover from "$lib/components/ui/popover/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Popover from "$lib/components/ui-rtl/popover/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	import EllipsisIcon from "@lucide/svelte/icons/ellipsis";
 	import StarIcon from "@lucide/svelte/icons/star";
 	import { untrack } from "svelte";
@@ -95,7 +95,7 @@
 </script>
 
 <div class="flex items-center gap-2 text-sm">
-	<div class="text-muted-foreground hidden font-medium md:inline-block">Edit Oct 08</div>
+	<div class="text-muted-foreground hidden font-medium md:inline-block">ویرایش مهر 08</div>
 	<Button variant="ghost" size="icon" class="size-7">
 		<StarIcon />
 	</Button>
@@ -112,7 +112,7 @@
 				</Button>
 			{/snippet}
 		</Popover.Trigger>
-		<Popover.Content class="w-56 overflow-hidden rounded-lg p-0" align="end">
+		<Popover.Content class="w-56 overflow-hidden rounded-lg p-0" align="start">
 			<Sidebar.Root collapsible="none" class="bg-transparent">
 				<Sidebar.Content>
 					{#each data as group, index (index)}
@@ -122,7 +122,7 @@
 									{#each group as item, index (index)}
 										<Sidebar.MenuItem>
 											<Sidebar.MenuButton
-												class="hover:bg-accent hover:text-accent-foreground"
+												class="hover:bg-accent hover:text-accent-foreground flex-row-reverse text-right"
 											>
 												<item.icon /> <span>{item.label}</span>
 											</Sidebar.MenuButton>

@@ -1,7 +1,7 @@
 <script>
 	import AppSidebar from "$lib/components/app-sidebar-10.svelte";
 	import NavActions from "$lib/components/nav-actions.svelte";
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
+	import * as Breadcrumb from "$lib/components/ui-rtl/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 </script>
@@ -12,18 +12,18 @@
 		<header class="flex h-14 shrink-0 items-center gap-2">
 			<div class="flex flex-1 items-center gap-2 px-3">
 				<Sidebar.Trigger />
-				<Separator orientation="vertical" class="mr-2 data-[orientation=vertical]:h-4" />
+				<Separator orientation="vertical" class="ms-2 data-[orientation=vertical]:h-4" />
 				<Breadcrumb.Root>
 					<Breadcrumb.List>
 						<Breadcrumb.Item>
 							<Breadcrumb.Page class="line-clamp-1">
-								Project Management & Task Tracking
+								مدیریت پروژه و پیگیری وظایف
 							</Breadcrumb.Page>
 						</Breadcrumb.Item>
 					</Breadcrumb.List>
 				</Breadcrumb.Root>
 			</div>
-			<div class="ml-auto px-3">
+			<div class="ms-auto px-3">
 				<NavActions />
 			</div>
 		</header>
