@@ -36,6 +36,16 @@ function convertToRtl(classNames) {
 	result = result.replace(/\bmr-auto\b/g, 'ml-auto');
 	result = result.replace(/__RTL_ML_AUTO__/g, 'mr-auto');
 	
+	// Handle text-left and text-right swap
+	result = result.replace(/\btext-left\b/g, '__RTL_TEXT_LEFT__');
+	result = result.replace(/\btext-right\b/g, 'text-left');
+	result = result.replace(/__RTL_TEXT_LEFT__/g, 'text-right');
+	
+	// Handle left-[...] and right-[...] arbitrary values
+	result = result.replace(/\bleft-(\[[^\]]+\])/g, '__RTL_LEFT__$1');
+	result = result.replace(/\bright-(\[[^\]]+\])/g, 'left-$1');
+	result = result.replace(/__RTL_LEFT__/g, 'right-');
+	
 	// Handle translate-x with arbitrary values - must be done AFTER other mappings
 	// to avoid conflicts. We'll mark them first, then convert at the end.
 	
@@ -46,9 +56,13 @@ function convertToRtl(classNames) {
 	);
 	
 	// General translate-x-[...] patterns (not part of data-[state)
+	// Also handle negative translate-x like -translate-x-[-50%]
 	result = result.replace(
-		/(?<!data-\[state=(?:checked|unchecked)\]:)(?<!__RTL_FLIP__)translate-x-(\[[^\]]+\])/g,
-		'__RTL_FLIP__translate-x-$1'
+		/(?<!data-\[state=(?:checked|unchecked)\]:)(?<!__RTL_FLIP__)(-?)translate-x-(\[[^\]]+\])/g,
+		(match, minus, value) => {
+			// If it has minus, remove it; if not, add it
+			return minus ? `__RTL_FLIP__translate-x-${value}` : `__RTL_FLIP__-translate-x-${value}`;
+		}
 	);
 	
 	const rtlMappings = {
@@ -117,11 +131,11 @@ function convertToRtl(classNames) {
 		result = result.replace(regex, rtl);
 	}
 	
-	// Finally, convert marked translate-x to negative
-	result = result.replace(/__RTL_FLIP__translate-x-/g, '-translate-x-');
+	// Finally, convert marked translate-x - remove the marker
+	result = result.replace(/__RTL_FLIP__/g, '');
 	
 	// Debug log
-	if (original.includes('border-l') || original.includes('translate-x-px')) {
+	if (original.includes('border-l') || original.includes('translate-x') || original.includes('left-[') || original.includes('right-[')) {
 		console.log('RTL Conversion:');
 		console.log('  Original:', original);
 		console.log('  Result:  ', result);

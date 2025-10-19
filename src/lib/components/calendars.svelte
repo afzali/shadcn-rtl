@@ -2,7 +2,7 @@
 	import * as Collapsible from "$lib/components/ui/collapsible/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import CheckIcon from "@lucide/svelte/icons/check";
-	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+	import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
 
 	let { calendars } = $props();
 </script>
@@ -16,8 +16,8 @@
 				{#snippet child({ props })}
 					<Collapsible.Trigger {...props}>
 						{calendar.name}
-						<ChevronRightIcon
-							class="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90"
+						<ChevronLeftIcon
+							class="ms-auto transition-transform group-data-[state=open]/collapsible:-rotate-90"
 						/>
 					</Collapsible.Trigger>
 				{/snippet}

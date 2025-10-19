@@ -64,6 +64,34 @@ function convertToCnRtl(content, fileName) {
 		);
 	}
 	
+	// Special handling for breadcrumb-separator: change ChevronRight to ChevronLeft
+	if (fileName === 'breadcrumb-separator.svelte') {
+		content = content.replace(
+			/import\s+ChevronRightIcon\s+from\s+["']@lucide\/svelte\/icons\/chevron-right["']/g,
+			'import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left"'
+		);
+		content = content.replace(
+			/<ChevronRightIcon\s*\/>/g,
+			'<ChevronLeftIcon />'
+		);
+	}
+	
+	// Special handling for sidebar-menu-badge: change right-1 to left-1 for RTL
+	if (fileName === 'sidebar-menu-badge.svelte') {
+		content = content.replace(
+			/absolute right-1 flex/g,
+			'absolute left-1 flex'
+		);
+	}
+	
+	// Special handling for breadcrumb-list: add flex-row-reverse for RTL
+	if (fileName === 'breadcrumb-list.svelte') {
+		content = content.replace(
+			/"text-muted-foreground flex flex-wrap/g,
+			'"text-muted-foreground flex flex-row-reverse flex-wrap'
+		);
+	}
+	
 	return content;
 }
 

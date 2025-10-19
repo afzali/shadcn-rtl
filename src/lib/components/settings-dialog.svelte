@@ -1,8 +1,8 @@
 <script>
-	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Dialog from "$lib/components/ui/dialog/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Breadcrumb from "$lib/components/ui-rtl/breadcrumb/index.js";
+	import { Button } from "$lib/components/ui-rtl/button/index.js";
+	import * as Dialog from "$lib/components/ui-rtl/dialog/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	import BellIcon from "@lucide/svelte/icons/bell";
 	import CheckIcon from "@lucide/svelte/icons/check";
 	import GlobeIcon from "@lucide/svelte/icons/globe";
@@ -18,18 +18,18 @@
 
 	const data = {
 		nav: [
-			{ name: "Notifications", icon: BellIcon },
-			{ name: "Navigation", icon: MenuIcon },
-			{ name: "Home", icon: HouseIcon },
-			{ name: "Appearance", icon: PaintbrushIcon },
-			{ name: "Messages & media", icon: MessageCircleIcon },
-			{ name: "Language & region", icon: GlobeIcon },
-			{ name: "Accessibility", icon: KeyboardIcon },
-			{ name: "Mark as read", icon: CheckIcon },
-			{ name: "Audio & video", icon: VideoIcon },
-			{ name: "Connected accounts", icon: LinkIcon },
-			{ name: "Privacy & visibility", icon: LockIcon },
-			{ name: "Advanced", icon: SettingsIcon },
+			{ name: "اعلان‌ها", icon: BellIcon },
+			{ name: "ناوبری", icon: MenuIcon },
+			{ name: "خانه", icon: HouseIcon },
+			{ name: "ظاهر", icon: PaintbrushIcon },
+			{ name: "پیام‌ها و رسانه", icon: MessageCircleIcon },
+			{ name: "زبان و منطقه", icon: GlobeIcon },
+			{ name: "دسترسی‌پذیری", icon: KeyboardIcon },
+			{ name: "علامت‌گذاری به عنوان خوانده شده", icon: CheckIcon },
+			{ name: "صدا و تصویر", icon: VideoIcon },
+			{ name: "حساب‌های متصل", icon: LinkIcon },
+			{ name: "حریم خصوصی و نمایش", icon: LockIcon },
+			{ name: "پیشرفته", icon: SettingsIcon },
 		],
 	};
 
@@ -39,29 +39,29 @@
 <Dialog.Root bind:open>
 	<Dialog.Trigger>
 		{#snippet child({ props })}
-			<Button size="sm" {...props}>Open Dialog</Button>
+			<Button size="sm" {...props}>باز کردن دیالوگ</Button>
 		{/snippet}
 	</Dialog.Trigger>
 	<Dialog.Content
 		class="overflow-hidden p-0 md:max-h-[500px] md:max-w-[700px] lg:max-w-[800px]"
 		trapFocus={false}
 	>
-		<Dialog.Title class="sr-only">Settings</Dialog.Title>
-		<Dialog.Description class="sr-only">Customize your settings here.</Dialog.Description>
+		<Dialog.Title class="sr-only">تنظیمات</Dialog.Title>
+		<Dialog.Description class="sr-only">تنظیمات خود را در اینجا سفارشی کنید.</Dialog.Description>
 		<Sidebar.Provider class="items-start">
 			<main class="flex h-[480px] flex-1 flex-col overflow-hidden">
 				<header
 					class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
 				>
-					<div class="flex items-center gap-2 px-4">
+					<div class="flex items-center gap-2 px-4 text-right">
 						<Breadcrumb.Root>
 							<Breadcrumb.List>
 								<Breadcrumb.Item class="hidden md:block">
-									<Breadcrumb.Link href="#">Settings</Breadcrumb.Link>
+									<Breadcrumb.Link href="#">تنظیمات</Breadcrumb.Link>
 								</Breadcrumb.Item>
 								<Breadcrumb.Separator class="hidden md:block" />
 								<Breadcrumb.Item>
-									<Breadcrumb.Page>Messages & media</Breadcrumb.Page>
+									<Breadcrumb.Page>پیام‌ها و رسانه</Breadcrumb.Page>
 								</Breadcrumb.Item>
 							</Breadcrumb.List>
 						</Breadcrumb.Root>
@@ -81,7 +81,7 @@
 								{#each data.nav as item (item.name)}
 									<Sidebar.MenuItem>
 										<Sidebar.MenuButton
-											isActive={item.name === "Messages & media"}
+											isActive={item.name === "پیام‌ها و رسانه"}
 										>
 											{#snippet child({ props })}
 												<a href="##" {...props}>

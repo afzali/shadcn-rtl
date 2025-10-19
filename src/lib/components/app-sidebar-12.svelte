@@ -2,22 +2,22 @@
   // This is sample data.
   const data = {
     user: {
-      name: "shadcn",
-      email: "m@example.com",
+      name: "علی رضایی",
+      email: "ali@example.com",
       avatar: "/avatars/shadcn.jpg",
     },
     calendars: [
       {
-        name: "My Calendars",
-        items: ["Personal", "Work", "Family"],
+        name: "تقویم‌های من",
+        items: ["شخصی", "کاری", "خانوادگی"],
       },
       {
-        name: "Favorites",
-        items: ["Holidays", "Birthdays"],
+        name: "علاقه‌مندی‌ها",
+        items: ["تعطیلات", "تولدها"],
       },
       {
-        name: "Other",
-        items: ["Travel", "Reminders", "Deadlines"],
+        name: "سایر",
+        items: ["سفر", "یادآوری‌ها", "ضرب‌الاجل‌ها"],
       },
     ],
   };
@@ -26,7 +26,7 @@
   import Calendars from "./calendars.svelte";
   import DatePicker from "./date-picker.svelte";
   import NavUser from "./nav-user.svelte";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import PlusIcon from "@lucide/svelte/icons/plus";
   import type { ComponentProps } from "svelte";
   let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
@@ -45,7 +45,7 @@
       <Sidebar.MenuItem>
         <Sidebar.MenuButton>
           <PlusIcon />
-          <span>New Calendar</span>
+          <span>تقویم جدید</span>
         </Sidebar.MenuButton>
       </Sidebar.MenuItem>
     </Sidebar.Menu>

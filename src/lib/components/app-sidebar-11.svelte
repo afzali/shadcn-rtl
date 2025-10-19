@@ -35,9 +35,9 @@
   };
 </script>
 <script lang="ts">
-  import * as Collapsible from "$lib/components/ui/collapsible/index.js";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-  import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+  import * as Collapsible from "$lib/components/ui-rtl/collapsible/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
+  import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
   import FileIcon from "@lucide/svelte/icons/file";
   import FolderIcon from "@lucide/svelte/icons/folder";
   import type { ComponentProps } from "svelte";
@@ -46,7 +46,7 @@
 <Sidebar.Root bind:ref {...restProps}>
   <Sidebar.Content>
     <Sidebar.Group>
-      <Sidebar.GroupLabel>Changes</Sidebar.GroupLabel>
+      <Sidebar.GroupLabel>تغییرات</Sidebar.GroupLabel>
       <Sidebar.GroupContent>
         <Sidebar.Menu>
           {#each data.changes as item, index (index)}
@@ -62,7 +62,7 @@
       </Sidebar.GroupContent>
     </Sidebar.Group>
     <Sidebar.Group>
-      <Sidebar.GroupLabel>Files</Sidebar.GroupLabel>
+      <Sidebar.GroupLabel>فایل‌ها</Sidebar.GroupLabel>
       <Sidebar.GroupContent>
         <Sidebar.Menu>
           {#each data.tree as item, index (index)}
@@ -88,13 +88,13 @@
   {:else}
     <Sidebar.MenuItem>
       <Collapsible.Root
-        class="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
+        class="group/collapsible [&[data-state=open]>button>svg:first-child]:-rotate-90"
         open={name === "lib" || name === "components"}
       >
         <Collapsible.Trigger>
           {#snippet child({ props })}
             <Sidebar.MenuButton {...props}>
-              <ChevronRightIcon className="transition-transform" />
+              <ChevronLeftIcon className="transition-transform" />
               <FolderIcon />
               {name}
             </Sidebar.MenuButton>

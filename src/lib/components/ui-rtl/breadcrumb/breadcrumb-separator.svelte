@@ -1,5 +1,5 @@
 <script>
-	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
+	import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
 	import { cnRtl } from "$lib/rtl-utils.js";
 	let {
 		ref = $bindable(null),
@@ -20,6 +20,6 @@
 	{#if children}
 		{@render children?.()}
 	{:else}
-		<ChevronRightIcon />
+		<ChevronLeftIcon />
 	{/if}
 </li>
