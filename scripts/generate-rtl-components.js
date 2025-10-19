@@ -16,7 +16,7 @@ const SPECIAL_RTL_COMPONENTS = {
 	'select': ['select-content.svelte'],
 	'context-menu': ['context-menu-content.svelte'],
 	'menubar': ['menubar-content.svelte'],
-	'breadcrumb': ['breadcrumb-separator.svelte'],
+	'dialog': ['dialog-content.svelte'],
 	'pagination': ['pagination-content.svelte', 'pagination-prev.svelte', 'pagination-next.svelte'],
 	'sidebar': ['sidebar-content.svelte', 'sidebar-menu-sub.svelte', 'sidebar-menu-sub-button.svelte'],
 	'navigation-menu': ['navigation-menu-content.svelte'],
@@ -64,18 +64,6 @@ function convertToCnRtl(content, fileName) {
 		);
 	}
 	
-	// Special handling for breadcrumb-separator: change ChevronRight to ChevronLeft
-	if (fileName === 'breadcrumb-separator.svelte') {
-		content = content.replace(
-			/import\s+ChevronRightIcon\s+from\s+["']@lucide\/svelte\/icons\/chevron-right["']/g,
-			'import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left"'
-		);
-		content = content.replace(
-			/<ChevronRightIcon\s*\/>/g,
-			'<ChevronLeftIcon />'
-		);
-	}
-	
 	// Special handling for sidebar-menu-badge: change right-1 to left-1 for RTL
 	if (fileName === 'sidebar-menu-badge.svelte') {
 		content = content.replace(
@@ -84,11 +72,11 @@ function convertToCnRtl(content, fileName) {
 		);
 	}
 	
-	// Special handling for breadcrumb-list: add flex-row-reverse for RTL
-	if (fileName === 'breadcrumb-list.svelte') {
+	// Special handling for dialog-content: change close button from end-4 to start-4 for RTL
+	if (fileName === 'dialog-content.svelte') {
 		content = content.replace(
-			/"text-muted-foreground flex flex-wrap/g,
-			'"text-muted-foreground flex flex-row-reverse flex-wrap'
+			/absolute end-4 top-4/g,
+			'absolute start-4 top-4'
 		);
 	}
 	
