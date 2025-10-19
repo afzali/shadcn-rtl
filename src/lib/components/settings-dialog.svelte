@@ -49,30 +49,6 @@
 		<Dialog.Title class="sr-only">Settings</Dialog.Title>
 		<Dialog.Description class="sr-only">Customize your settings here.</Dialog.Description>
 		<Sidebar.Provider class="items-start">
-			<Sidebar.Root collapsible="none" class="hidden md:flex">
-				<Sidebar.Content>
-					<Sidebar.Group>
-						<Sidebar.GroupContent>
-							<Sidebar.Menu>
-								{#each data.nav as item (item.name)}
-									<Sidebar.MenuItem>
-										<Sidebar.MenuButton
-											isActive={item.name === "Messages & media"}
-										>
-											{#snippet child({ props })}
-												<a href="##" {...props}>
-													<item.icon />
-													<span>{item.name}</span>
-												</a>
-											{/snippet}
-										</Sidebar.MenuButton>
-									</Sidebar.MenuItem>
-								{/each}
-							</Sidebar.Menu>
-						</Sidebar.GroupContent>
-					</Sidebar.Group>
-				</Sidebar.Content>
-			</Sidebar.Root>
 			<main class="flex h-[480px] flex-1 flex-col overflow-hidden">
 				<header
 					class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
@@ -97,6 +73,30 @@
 					{/each}
 				</div>
 			</main>
+			<Sidebar.Root collapsible="none" class="hidden md:flex" side="right">
+				<Sidebar.Content>
+					<Sidebar.Group>
+						<Sidebar.GroupContent>
+							<Sidebar.Menu>
+								{#each data.nav as item (item.name)}
+									<Sidebar.MenuItem>
+										<Sidebar.MenuButton
+											isActive={item.name === "Messages & media"}
+										>
+											{#snippet child({ props })}
+												<a href="##" {...props}>
+													<item.icon />
+													<span>{item.name}</span>
+												</a>
+											{/snippet}
+										</Sidebar.MenuButton>
+									</Sidebar.MenuItem>
+								{/each}
+							</Sidebar.Menu>
+						</Sidebar.GroupContent>
+					</Sidebar.Group>
+				</Sidebar.Content>
+			</Sidebar.Root>
 		</Sidebar.Provider>
 	</Dialog.Content>
 </Dialog.Root>

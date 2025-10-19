@@ -16,7 +16,7 @@
 	import NavSecondary from "./nav-secondary.svelte";
 	import NavWorkspaces from "./nav-workspaces.svelte";
 	import TeamSwitcher from "./team-switcher.svelte";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	// This is sample data.
 	const data = {
 		teams: [
@@ -251,7 +251,7 @@
 	let { ref = $bindable(null), ...restProps } = $props();
 </script>
 
-<Sidebar.Root class="border-r-0" {...restProps}>
+<Sidebar.Root side="right" class="border-l-0" {...restProps}>
 	<Sidebar.Header>
 		<TeamSwitcher teams={data.teams} />
 		<NavMain items={data.navMain} />
