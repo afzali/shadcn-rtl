@@ -90,7 +90,7 @@ function convertToRtl(classNames) {
 		
 		// Text align
 		'text-left': 'text-right',
-		'text-right': 'text-left',
+		// Note: text-right stays as text-right (no conversion needed)
 		'text-start': 'text-end',
 		'text-end': 'text-start',
 		
