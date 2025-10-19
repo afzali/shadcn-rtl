@@ -51,9 +51,9 @@
 		<Sidebar.Provider class="items-start">
 			<main class="flex h-[480px] flex-1 flex-col overflow-hidden">
 				<header
-					class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
+					class="flex h-16 shrink-0 items-center justify-end gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
 				>
-					<div class="flex items-center gap-2 px-4 text-right">
+					<div class="flex items-center justify-end gap-2 px-4 text-right">
 						<Breadcrumb.Root>
 							<Breadcrumb.List>
 								<Breadcrumb.Item class="hidden md:block">
