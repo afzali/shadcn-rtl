@@ -18,7 +18,7 @@ const SPECIAL_RTL_COMPONENTS = {
 	'menubar': ['menubar-content.svelte'],
 	'dialog': ['dialog-content.svelte'],
 	'pagination': ['pagination-content.svelte', 'pagination-prev.svelte', 'pagination-next.svelte'],
-	'sidebar': ['sidebar-content.svelte', 'sidebar-menu-sub.svelte', 'sidebar-menu-sub-button.svelte'],
+	'sidebar': ['sidebar-content.svelte', 'sidebar-menu-sub.svelte', 'sidebar-menu-sub-button.svelte', 'sidebar-menu-button.svelte'],
 	'navigation-menu': ['navigation-menu-content.svelte'],
 	'calendar': ['calendar.svelte'],
 	'range-calendar': ['range-calendar.svelte'],
@@ -77,6 +77,25 @@ function convertToCnRtl(content, fileName) {
 		content = content.replace(
 			/absolute end-4 top-4/g,
 			'absolute start-4 top-4'
+		);
+	}
+	
+	// Special handling for sidebar-menu-button: RTL adjustments
+	if (fileName === 'sidebar-menu-button.svelte') {
+		// Change pr-8 to pl-8
+		content = content.replace(
+			/menu-item:pr-8/g,
+			'menu-item:pl-8'
+		);
+		// Change text-left to text-right and add flex-row-reverse
+		content = content.replace(
+			/flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm/g,
+			'flex flex-row-reverse w-full items-center gap-2 overflow-hidden rounded-md p-2 text-right text-sm'
+		);
+		// Change tooltip side from right to left
+		content = content.replace(
+			/side="right"/g,
+			'side="left"'
 		);
 	}
 	
