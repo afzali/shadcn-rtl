@@ -46,7 +46,7 @@ function needsRtlConversion(content) {
 }
 
 // Convert cn to cnRtl in file
-function convertToCnRtl(content) {
+function convertToCnRtl(content, fileName) {
 	// Replace import
 	content = content.replace(
 		/import\s+{\s*cn\s*}\s+from\s+['"]\$lib\/utils\.js['"]/g,
@@ -55,6 +55,14 @@ function convertToCnRtl(content) {
 	
 	// Replace cn( with cnRtl(
 	content = content.replace(/\bcn\(/g, 'cnRtl(');
+	
+	// Special handling for dropdown-menu-item: add flex-row-reverse
+	if (fileName === 'dropdown-menu-item.svelte') {
+		content = content.replace(
+			/relative flex cursor-default/g,
+			'relative flex flex-row-reverse cursor-default'
+		);
+	}
 	
 	return content;
 }
@@ -138,7 +146,7 @@ async function processComponentFile(componentName, fileName, sourceDir, targetDi
 	
 	// If component needs RTL conversion
 	if (isSpecial || needsRtlConversion(content)) {
-		const rtlContent = convertToCnRtl(content);
+		const rtlContent = convertToCnRtl(content, fileName);
 		await fs.writeFile(targetPath, rtlContent);
 		console.log(`✓ Converted ${componentName}/${fileName} with RTL support`);
 	} else {

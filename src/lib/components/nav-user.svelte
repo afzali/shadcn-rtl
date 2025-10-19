@@ -5,8 +5,8 @@
 	import NotificationIcon from "@tabler/icons-svelte/icons/notification";
 	import UserCircleIcon from "@tabler/icons-svelte/icons/user-circle";
 	import * as Avatar from "$lib/components/ui/avatar/index.js";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 
 	let { user } = $props();
 
@@ -27,13 +27,13 @@
 							<Avatar.Image src={user.avatar} alt={user.name} />
 							<Avatar.Fallback class="rounded-lg">CN</Avatar.Fallback>
 						</Avatar.Root>
-						<div class="grid flex-1 text-left text-sm leading-tight">
+						<div class="grid flex-1 text-right text-sm leading-tight">
 							<span class="truncate font-medium">{user.name}</span>
 							<span class="text-muted-foreground truncate text-xs">
 								{user.email}
 							</span>
 						</div>
-						<DotsVerticalIcon class="ml-auto size-4" />
+						<DotsVerticalIcon class="ms-auto size-4" />
 					</Sidebar.MenuButton>
 				{/snippet}
 			</DropdownMenu.Trigger>
@@ -45,37 +45,38 @@
 			>
 				<DropdownMenu.Label class="p-0 font-normal">
 					<div class="flex items-center gap-2 px-1 py-1.5 text-right text-sm">
-						<Avatar.Root class="size-8 rounded-lg">
-							<Avatar.Image src={user.avatar} alt={user.name} />
-							<Avatar.Fallback class="rounded-lg">CN</Avatar.Fallback>
-						</Avatar.Root>
+						
 						<div class="grid flex-1 text-right text-sm leading-tight">
 							<span class="truncate font-medium">{user.name}</span>
 							<span class="text-muted-foreground truncate text-xs">
 								{user.email}
 							</span>
 						</div>
+						<Avatar.Root class="size-8 rounded-lg">
+							<Avatar.Image src={user.avatar} alt={user.name} />
+							<Avatar.Fallback class="rounded-lg">CN</Avatar.Fallback>
+						</Avatar.Root>
 					</div>
 				</DropdownMenu.Label>
 				<DropdownMenu.Separator />
 				<DropdownMenu.Group>
-					<DropdownMenu.Item>
+					<DropdownMenu.Item class="text-left">
 						<UserCircleIcon />
-						Account
+						حساب کاربری
 					</DropdownMenu.Item>
-					<DropdownMenu.Item>
+					<DropdownMenu.Item class="text-left">
 						<CreditCardIcon />
-						Billing
+						صورتحساب
 					</DropdownMenu.Item>
-					<DropdownMenu.Item>
+					<DropdownMenu.Item class="text-left">
 						<NotificationIcon />
-						Notifications
+						اعلان‌ها
 					</DropdownMenu.Item>
 				</DropdownMenu.Group>
 				<DropdownMenu.Separator />
-				<DropdownMenu.Item>
+				<DropdownMenu.Item class="text-left">
 					<LogoutIcon />
-					Log out
+					خروج
 				</DropdownMenu.Item>
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
