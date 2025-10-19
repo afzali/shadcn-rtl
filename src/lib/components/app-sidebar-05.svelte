@@ -142,9 +142,9 @@
   };
 </script>
 <script lang="ts">
-  import SearchForm from "./search-form.svelte";
+  import SearchForm from "./search-form-01.svelte";
   import * as Collapsible from "$lib/components/ui/collapsible/index.js";
-  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
   import GalleryVerticalEndIcon from "@lucide/svelte/icons/gallery-vertical-end";
   import MinusIcon from "@lucide/svelte/icons/minus";
   import PlusIcon from "@lucide/svelte/icons/plus";
@@ -163,9 +163,9 @@
               >
                 <GalleryVerticalEndIcon class="size-4" />
               </div>
-              <div class="flex flex-col gap-0.5 leading-none">
-                <span class="font-medium">Documentation</span>
-                <span class="">v1.0.0</span>
+              <div class="flex flex-col gap-0.5 leading-none text-right flex-1">
+                <span class="font-medium">مستندات</span>
+                <span class="text-xs opacity-70">نسخه 1.0.0</span>
               </div>
             </a>
           {/snippet}
@@ -185,10 +185,10 @@
                   <Sidebar.MenuButton {...props}>
                     {item.title}
                     <PlusIcon
-                      class="ml-auto group-data-[state=open]/collapsible:hidden"
+                      class="ms-auto group-data-[state=open]/collapsible:hidden"
                     />
                     <MinusIcon
-                      class="ml-auto group-data-[state=closed]/collapsible:hidden"
+                      class="ms-auto group-data-[state=closed]/collapsible:hidden"
                     />
                   </Sidebar.MenuButton>
                 {/snippet}

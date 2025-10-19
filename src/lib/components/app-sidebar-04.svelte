@@ -158,9 +158,9 @@
               >
                 <GalleryVerticalEndIcon class="size-4" />
               </div>
-              <div class="flex flex-col gap-0.5 leading-none">
-                <span class="font-medium">Documentation</span>
-                <span class="">v1.0.0</span>
+              <div class="flex flex-col gap-0.5 leading-none text-right flex-1">
+                <span class="font-medium">مستندات</span>
+                <span class="text-xs opacity-70">نسخه 1.0.0</span>
               </div>
             </a>
           {/snippet}
