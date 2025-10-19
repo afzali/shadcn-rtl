@@ -1,5 +1,5 @@
 <script>
-	import AppSidebar from "$lib/components/app-sidebar.svelte";
+	import AppSidebar from "$lib/components/app-sidebar-06.svelte";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
@@ -14,11 +14,11 @@
 			<Breadcrumb.Root>
 				<Breadcrumb.List>
 					<Breadcrumb.Item class="hidden md:block">
-						<Breadcrumb.Link href="#">Building Your Application</Breadcrumb.Link>
+						<Breadcrumb.Link href="#">ساخت برنامه</Breadcrumb.Link>
 					</Breadcrumb.Item>
 					<Breadcrumb.Separator class="hidden md:block" />
 					<Breadcrumb.Item>
-						<Breadcrumb.Page>Data Fetching</Breadcrumb.Page>
+						<Breadcrumb.Page>دریافت داده</Breadcrumb.Page>
 					</Breadcrumb.Item>
 				</Breadcrumb.List>
 			</Breadcrumb.Root>

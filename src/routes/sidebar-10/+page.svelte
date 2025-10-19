@@ -1,5 +1,5 @@
 <script>
-	import AppSidebar from "$lib/components/app-sidebar.svelte";
+	import AppSidebar from "$lib/components/app-sidebar-10.svelte";
 	import NavActions from "$lib/components/nav-actions.svelte";
 	import * as Breadcrumb from "$lib/components/ui/breadcrumb/index.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";

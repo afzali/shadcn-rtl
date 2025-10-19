@@ -13,11 +13,11 @@
 <Sidebar.Menu>
 	<Sidebar.MenuItem>
 		<DropdownMenu.Root>
-			<DropdownMenu.Trigger>
+			<DropdownMenu.Trigger class="w-full">
 				{#snippet child({ props })}
 					<Sidebar.MenuButton
 						size="lg"
-						class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+						class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground w-full"
 						{...props}
 					>
 						<div
@@ -25,21 +25,24 @@
 						>
 							<GalleryVerticalEndIcon class="size-4" />
 						</div>
-						<div class="flex flex-col gap-0.5 leading-none">
-							<span class="font-medium">Documentation</span>
-							<span class="">v{selectedVersion}</span>
+						<div class="flex flex-col gap-0.5 leading-none text-right flex-1">
+							<span class="font-medium">مستندات</span>
+							<span class="text-xs opacity-70">نسخه {selectedVersion}</span>
 						</div>
-						<ChevronsUpDownIcon class="ml-auto" />
+						<ChevronsUpDownIcon class="ms-auto" />
 					</Sidebar.MenuButton>
 				{/snippet}
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content class="w-(--bits-dropdown-menu-anchor-width)" align="start">
 				{#each versions as version (version)}
 					<DropdownMenu.Item onSelect={() => (selectedVersion = version)}>
-						v{version}
-						{#if version === selectedVersion}
-							<CheckIcon class="ml-auto" />
-						{/if}
+						<div class="flex w-full flex-row-reverse items-center">
+							<span class="flex-1 text-right">نسخه {version}</span>
+							{#if version === selectedVersion}
+								<CheckIcon class="me-auto size-4" />
+							{/if}
+							
+						</div>
 					</DropdownMenu.Item>
 				{/each}
 			</DropdownMenu.Content>

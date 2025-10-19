@@ -3,122 +3,122 @@
   const data = {
     navMain: [
       {
-        title: "Getting Started",
+        title: "شروع کار",
         url: "#",
         items: [
           {
-            title: "Installation",
+            title: "نصب و راه‌اندازی",
             url: "#",
           },
           {
-            title: "Project Structure",
+            title: "ساختار پروژه",
             url: "#",
           },
         ],
       },
       {
-        title: "Building Your Application",
+        title: "ساخت برنامه",
         url: "#",
         items: [
           {
-            title: "Routing",
+            title: "مسیریابی",
             url: "#",
           },
           {
-            title: "Data Fetching",
+            title: "دریافت داده",
             url: "#",
             isActive: true,
           },
           {
-            title: "Rendering",
+            title: "رندرینگ",
             url: "#",
           },
           {
-            title: "Caching",
+            title: "کش کردن",
             url: "#",
           },
           {
-            title: "Styling",
+            title: "استایل‌دهی",
             url: "#",
           },
           {
-            title: "Optimizing",
+            title: "بهینه‌سازی",
             url: "#",
           },
           {
-            title: "Configuring",
+            title: "پیکربندی",
             url: "#",
           },
           {
-            title: "Testing",
+            title: "تست",
             url: "#",
           },
           {
-            title: "Authentication",
+            title: "احراز هویت",
             url: "#",
           },
           {
-            title: "Deploying",
+            title: "استقرار",
             url: "#",
           },
           {
-            title: "Upgrading",
+            title: "ارتقا",
             url: "#",
           },
           {
-            title: "Examples",
-            url: "#",
-          },
-        ],
-      },
-      {
-        title: "API Reference",
-        url: "#",
-        items: [
-          {
-            title: "Components",
-            url: "#",
-          },
-          {
-            title: "File Conventions",
-            url: "#",
-          },
-          {
-            title: "Functions",
-            url: "#",
-          },
-          {
-            title: "next.config.js Options",
-            url: "#",
-          },
-          {
-            title: "CLI",
-            url: "#",
-          },
-          {
-            title: "Edge Runtime",
+            title: "نمونه‌ها",
             url: "#",
           },
         ],
       },
       {
-        title: "Architecture",
+        title: "مرجع API",
         url: "#",
         items: [
           {
-            title: "Accessibility",
+            title: "کامپوننت‌ها",
             url: "#",
           },
           {
-            title: "Fast Refresh",
+            title: "قراردادهای فایل",
             url: "#",
           },
           {
-            title: "Next.js Compiler",
+            title: "توابع",
             url: "#",
           },
           {
-            title: "Supported Browsers",
+            title: "تنظیمات next.config.js",
+            url: "#",
+          },
+          {
+            title: "خط فرمان",
+            url: "#",
+          },
+          {
+            title: "محیط Edge",
+            url: "#",
+          },
+        ],
+      },
+      {
+        title: "معماری",
+        url: "#",
+        items: [
+          {
+            title: "دسترسی‌پذیری",
+            url: "#",
+          },
+          {
+            title: "بارگذاری سریع",
+            url: "#",
+          },
+          {
+            title: "کامپایلر Next.js",
+            url: "#",
+          },
+          {
+            title: "مرورگرهای پشتیبانی‌شده",
             url: "#",
           },
           {

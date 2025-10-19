@@ -1,7 +1,7 @@
 <script>
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	import SiteHeader from "$lib/components/site-header.svelte";
-	import AppSidebar from "$lib/components/app-sidebar.svelte";
+	import AppSidebar from "$lib/components/app-sidebar-16.svelte";
 </script>
 
 <div class="[--header-height:calc(--spacing(14))]">
