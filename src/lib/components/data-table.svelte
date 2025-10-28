@@ -26,18 +26,18 @@
 		},
 		{
 			accessorKey: "header",
-			header: "Header",
+			header: "سربرگ",
 			cell: ({ row }) => renderComponent(DataTableCellViewer, { item: row.original }),
 			enableHiding: false,
 		},
 		{
 			accessorKey: "type",
-			header: "Section Type",
+			header: "نوع بخش",
 			cell: ({ row }) => renderSnippet(DataTableType, { row }),
 		},
 		{
 			accessorKey: "status",
-			header: "Status",
+			header: "وضعیت",
 			cell: ({ row }) => renderSnippet(DataTableStatus, { row }),
 		},
 		{
@@ -45,7 +45,7 @@
 			header: () =>
 				renderSnippet(
 					createRawSnippet(() => ({
-						render: () => '<div class="w-full text-right">Target</div>',
+						render: () => '<div class="w-full text-right">هدف</div>',
 					}))
 				),
 			cell: ({ row }) => renderSnippet(DataTableTarget, { row }),
@@ -55,14 +55,14 @@
 			header: () =>
 				renderSnippet(
 					createRawSnippet(() => ({
-						render: () => '<div class="w-full text-right">Limit</div>',
+						render: () => '<div class="w-full text-right">محدودیت</div>',
 					}))
 				),
 			cell: ({ row }) => renderSnippet(DataTableLimit, { row }),
 		},
 		{
 			accessorKey: "reviewer",
-			header: "Reviewer",
+			header: "بازبین",
 			cell: ({ row }) => renderComponent(DataTableReviewer, { row }),
 		},
 		{
@@ -76,14 +76,14 @@
 	import { getCoreRowModel, getFacetedRowModel, getFacetedUniqueValues, getFilteredRowModel, getPaginationRowModel, getSortedRowModel } from "@tanstack/table-core";
 	import { RestrictToVerticalAxis } from "@dnd-kit/abstract/modifiers";
 	import { createSvelteTable } from "$lib/components/ui/data-table/data-table.svelte.js";
-	import * as Tabs from "$lib/components/ui/tabs/index.js";
-	import * as Table from "$lib/components/ui/table/index.js";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Select from "$lib/components/ui/select/index.js";
-	import { Label } from "$lib/components/ui/label/index.js";
-	import { Badge } from "$lib/components/ui/badge/index.js";
-	import { Input } from "$lib/components/ui/input/index.js";
+	import * as Tabs from "$lib/components/ui-rtl/tabs/index.js";
+	import * as Table from "$lib/components/ui-rtl/table/index.js";
+	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
+	import { Button } from "$lib/components/ui-rtl/button/index.js";
+	import * as Select from "$lib/components/ui-rtl/select/index.js";
+	import { Label } from "$lib/components/ui-rtl/label/index.js";
+	import { Badge } from "$lib/components/ui-rtl/badge/index.js";
+	import { Input } from "$lib/components/ui-rtl/input/index.js";
 	import {
 		FlexRender,
 		renderComponent,
@@ -186,28 +186,28 @@
 	let views = [
 		{
 			id: "outline",
-			label: "Outline",
+			label: "خلاصه",
 			badge: 0,
 		},
 		{
 			id: "past-performance",
-			label: "Past Performance",
+			label: "عملکرد گذشته",
 			badge: 3,
 		},
 		{
 			id: "key-personnel",
-			label: "Key Personnel",
+			label: "پرسنل کلیدی",
 			badge: 2,
 		},
 		{
 			id: "focus-documents",
-			label: "Focus Documents",
+			label: "اسناد مهم",
 			badge: 0,
 		},
 	];
 
 	let view = $state("outline");
-	let viewLabel = $derived(views.find((v) => view === v.id)?.label ?? "Select a view");
+	let viewLabel = $derived(views.find((v) => view === v.id)?.label ?? "انتخاب نما");
 </script>
 
 <Tabs.Root value="outline" class="w-full flex-col justify-start gap-6">
@@ -241,8 +241,8 @@
 					{#snippet child({ props })}
 						<Button variant="outline" size="sm" {...props}>
 							<LayoutColumnsIcon />
-							<span class="hidden lg:inline">Customize Columns</span>
-							<span class="lg:hidden">Columns</span>
+							<span class="hidden lg:inline">سفارشی‌سازی ستون‌ها</span>
+							<span class="lg:hidden">ستون‌ها</span>
 							<ChevronDownIcon />
 						</Button>
 					{/snippet}
@@ -263,7 +263,7 @@
 			</DropdownMenu.Root>
 			<Button variant="outline" size="sm">
 				<PlusIcon />
-				<span class="hidden lg:inline">Add Section</span>
+				<span class="hidden lg:inline">افزودن بخش</span>
 			</Button>
 		</div>
 	</div>
@@ -301,7 +301,7 @@
 						{:else}
 							<Table.Row>
 								<Table.Cell colspan={columns.length} class="h-24 text-center">
-									No results.
+									نتیجه‌ای یافت نشد.
 								</Table.Cell>
 							</Table.Row>
 						{/if}
@@ -311,12 +311,12 @@
 		</div>
 		<div class="flex items-center justify-between px-4">
 			<div class="text-muted-foreground hidden flex-1 text-sm lg:flex">
-				{table.getFilteredSelectedRowModel().rows.length} of
-				{table.getFilteredRowModel().rows.length} row(s) selected.
+				{table.getFilteredSelectedRowModel().rows.length} از
+				{table.getFilteredRowModel().rows.length} ردیف انتخاب شده.
 			</div>
 			<div class="flex w-full items-center gap-8 lg:w-fit">
 				<div class="hidden items-center gap-2 lg:flex">
-					<Label for="rows-per-page" class="text-sm font-medium">Rows per page</Label>
+					<Label for="rows-per-page" class="text-sm font-medium">ردیف در هر صفحه</Label>
 					<Select.Root
 						type="single"
 						bind:value={
@@ -337,7 +337,7 @@
 					</Select.Root>
 				</div>
 				<div class="flex w-fit items-center justify-center text-sm font-medium">
-					Page {table.getState().pagination.pageIndex + 1} of
+					صفحه {table.getState().pagination.pageIndex + 1} از
 					{table.getPageCount()}
 				</div>
 				<div class="ml-auto flex items-center gap-2 lg:ml-0">
@@ -347,7 +347,7 @@
 						onclick={() => table.setPageIndex(0)}
 						disabled={!table.getCanPreviousPage()}
 					>
-						<span class="sr-only">Go to first page</span>
+						<span class="sr-only">برو به صفحه اول</span>
 						<ChevronsLeftIcon />
 					</Button>
 					<Button
@@ -357,7 +357,7 @@
 						onclick={() => table.previousPage()}
 						disabled={!table.getCanPreviousPage()}
 					>
-						<span class="sr-only">Go to previous page</span>
+						<span class="sr-only">برو به صفحه قبل</span>
 						<ChevronLeftIcon />
 					</Button>
 					<Button
@@ -367,7 +367,7 @@
 						onclick={() => table.nextPage()}
 						disabled={!table.getCanNextPage()}
 					>
-						<span class="sr-only">Go to next page</span>
+						<span class="sr-only">برو به صفحه بعد</span>
 						<ChevronRightIcon />
 					</Button>
 					<Button
@@ -377,7 +377,7 @@
 						onclick={() => table.setPageIndex(table.getPageCount() - 1)}
 						disabled={!table.getCanNextPage()}
 					>
-						<span class="sr-only">Go to last page</span>
+						<span class="sr-only">برو به صفحه آخر</span>
 						<ChevronsRightIcon />
 					</Button>
 				</div>
@@ -400,13 +400,13 @@
 		onsubmit={(e) => {
 			e.preventDefault();
 			toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-				loading: `Saving ${row.original.header}`,
-				success: "Done",
-				error: "Error",
+				loading: `در حال ذخیره ${row.original.header}`,
+				success: "انجام شد",
+				error: "خطا",
 			});
 		}}
 	>
-		<Label for="{row.original.id}-limit" class="sr-only">Limit</Label>
+		<Label for="{row.original.id}-limit" class="sr-only">محدودیت</Label>
 		<Input
 			class="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible:border dark:bg-transparent"
 			value={row.original.limit}
@@ -420,13 +420,13 @@
 		onsubmit={(e) => {
 			e.preventDefault();
 			toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-				loading: `Saving ${row.original.header}`,
-				success: "Done",
-				error: "Error",
+				loading: `در حال ذخیره ${row.original.header}`,
+				success: "انجام شد",
+				error: "خطا",
 			});
 		}}
 	>
-		<Label for="{row.original.id}-target" class="sr-only">Target</Label>
+		<Label for="{row.original.id}-target" class="sr-only">هدف</Label>
 		<Input
 			class="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible:border dark:bg-transparent"
 			value={row.original.target}
@@ -460,16 +460,16 @@
 			{#snippet child({ props })}
 				<Button variant="ghost" size="icon" {...props}>
 					<DotsVerticalIcon />
-					<span class="sr-only">Open menu</span>
+					<span class="sr-only">باز کردن منو</span>
 				</Button>
 			{/snippet}
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content align="end" class="w-32">
-			<DropdownMenu.Item>Edit</DropdownMenu.Item>
-			<DropdownMenu.Item>Make a copy</DropdownMenu.Item>
-			<DropdownMenu.Item>Favorite</DropdownMenu.Item>
+			<DropdownMenu.Item>ویرایش</DropdownMenu.Item>
+			<DropdownMenu.Item>ساخت کپی</DropdownMenu.Item>
+			<DropdownMenu.Item>علاقه‌مندی‌ها</DropdownMenu.Item>
 			<DropdownMenu.Separator />
-			<DropdownMenu.Item variant="destructive">Delete</DropdownMenu.Item>
+			<DropdownMenu.Item variant="destructive">حذف</DropdownMenu.Item>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
 {/snippet}
@@ -506,6 +506,6 @@
 		class="text-muted-foreground size-7 hover:bg-transparent"
 	>
 		<GripVerticalIcon class="text-muted-foreground size-3" />
-		<span class="sr-only">Drag to reorder</span>
+		<span class="sr-only">بکشید برای مرتب‌سازی</span>
 	</Button>
 {/snippet}

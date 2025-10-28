@@ -1,8 +1,8 @@
 <script>
 	import TrendingDownIcon from "@tabler/icons-svelte/icons/trending-down";
 	import TrendingUpIcon from "@tabler/icons-svelte/icons/trending-up";
-	import { Badge } from "$lib/components/ui/badge/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
+	import { Badge } from "$lib/components/ui-rtl/badge/index.js";
+	import * as Card from "$lib/components/ui-rtl/card/index.js";
 </script>
 
 <div
@@ -10,9 +10,9 @@
 >
 	<Card.Root class="@container/card">
 		<Card.Header>
-			<Card.Description>Total Revenue</Card.Description>
+			<Card.Description>درآمد کل</Card.Description>
 			<Card.Title class="@[250px]/card:text-3xl text-2xl font-semibold tabular-nums">
-				$1,250.00
+				۱,۲۵۰,۰۰۰ تومان
 			</Card.Title>
 			<Card.Action>
 				<Badge variant="outline">
@@ -23,16 +23,16 @@
 		</Card.Header>
 		<Card.Footer class="flex-col items-start gap-1.5 text-sm">
 			<div class="line-clamp-1 flex gap-2 font-medium">
-				Trending up this month <TrendingUpIcon class="size-4" />
+				روند صعودی این ماه <TrendingUpIcon class="size-4" />
 			</div>
-			<div class="text-muted-foreground">Visitors for the last 6 months</div>
+			<div class="text-muted-foreground">بازدیدکنندگان ۶ ماه گذشته</div>
 		</Card.Footer>
 	</Card.Root>
 	<Card.Root class="@container/card">
 		<Card.Header>
-			<Card.Description>New Customers</Card.Description>
+			<Card.Description>مشتریان جدید</Card.Description>
 			<Card.Title class="@[250px]/card:text-3xl text-2xl font-semibold tabular-nums">
-				1,234
+				۱,۲۳۴
 			</Card.Title>
 			<Card.Action>
 				<Badge variant="outline">
@@ -43,16 +43,16 @@
 		</Card.Header>
 		<Card.Footer class="flex-col items-start gap-1.5 text-sm">
 			<div class="line-clamp-1 flex gap-2 font-medium">
-				Down 20% this period <TrendingDownIcon class="size-4" />
+				کاهش ۲۰٪ در این دوره <TrendingDownIcon class="size-4" />
 			</div>
-			<div class="text-muted-foreground">Acquisition needs attention</div>
+			<div class="text-muted-foreground">جذب مشتری نیاز به توجه دارد</div>
 		</Card.Footer>
 	</Card.Root>
 	<Card.Root class="@container/card">
 		<Card.Header>
-			<Card.Description>Active Accounts</Card.Description>
+			<Card.Description>حساب‌های فعال</Card.Description>
 			<Card.Title class="@[250px]/card:text-3xl text-2xl font-semibold tabular-nums">
-				45,678
+				۴۵,۶۷۸
 			</Card.Title>
 			<Card.Action>
 				<Badge variant="outline">
@@ -63,16 +63,16 @@
 		</Card.Header>
 		<Card.Footer class="flex-col items-start gap-1.5 text-sm">
 			<div class="line-clamp-1 flex gap-2 font-medium">
-				Strong user retention <TrendingUpIcon class="size-4" />
+				حفظ قوی کاربران <TrendingUpIcon class="size-4" />
 			</div>
-			<div class="text-muted-foreground">Engagement exceed targets</div>
+			<div class="text-muted-foreground">تعامل بیش از اهداف</div>
 		</Card.Footer>
 	</Card.Root>
 	<Card.Root class="@container/card">
 		<Card.Header>
-			<Card.Description>Growth Rate</Card.Description>
+			<Card.Description>نرخ رشد</Card.Description>
 			<Card.Title class="@[250px]/card:text-3xl text-2xl font-semibold tabular-nums">
-				4.5%
+				۴.۵٪
 			</Card.Title>
 			<Card.Action>
 				<Badge variant="outline">
@@ -83,9 +83,9 @@
 		</Card.Header>
 		<Card.Footer class="flex-col items-start gap-1.5 text-sm">
 			<div class="line-clamp-1 flex gap-2 font-medium">
-				Steady performance increase <TrendingUpIcon class="size-4" />
+				افزایش پایدار عملکرد <TrendingUpIcon class="size-4" />
 			</div>
-			<div class="text-muted-foreground">Meets growth projections</div>
+			<div class="text-muted-foreground">مطابق با پیش‌بینی‌های رشد</div>
 		</Card.Footer>
 	</Card.Root>
 </div>

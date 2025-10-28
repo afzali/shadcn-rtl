@@ -4,7 +4,7 @@
 	import LogoutIcon from "@tabler/icons-svelte/icons/logout";
 	import NotificationIcon from "@tabler/icons-svelte/icons/notification";
 	import UserCircleIcon from "@tabler/icons-svelte/icons/user-circle";
-	import * as Avatar from "$lib/components/ui/avatar/index.js";
+	import * as Avatar from "$lib/components/ui-rtl/avatar/index.js";
 	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 
@@ -39,7 +39,7 @@
 			</DropdownMenu.Trigger>
 			<DropdownMenu.Content
 				class="w-(--bits-dropdown-menu-anchor-width) min-w-56 rounded-lg"
-				side={sidebar.isMobile ? "bottom" : "right"}
+				side={sidebar.isMobile ? "bottom" : "left"}
 				align="end"
 				sideOffset={4}
 			>
@@ -60,21 +60,21 @@
 				</DropdownMenu.Label>
 				<DropdownMenu.Separator />
 				<DropdownMenu.Group>
-					<DropdownMenu.Item class="text-left">
+					<DropdownMenu.Item class="text-right">
 						<UserCircleIcon />
 						حساب کاربری
 					</DropdownMenu.Item>
-					<DropdownMenu.Item class="text-left">
+					<DropdownMenu.Item class="text-right">
 						<CreditCardIcon />
 						صورتحساب
 					</DropdownMenu.Item>
-					<DropdownMenu.Item class="text-left">
+					<DropdownMenu.Item class="text-right">
 						<NotificationIcon />
 						اعلان‌ها
 					</DropdownMenu.Item>
 				</DropdownMenu.Group>
 				<DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-left">
+				<DropdownMenu.Item class="text-right">
 					<LogoutIcon />
 					خروج
 				</DropdownMenu.Item>

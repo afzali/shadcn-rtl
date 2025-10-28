@@ -3,8 +3,8 @@
 	import FolderIcon from "@tabler/icons-svelte/icons/folder";
 	import Share3Icon from "@tabler/icons-svelte/icons/share-3";
 	import TrashIcon from "@tabler/icons-svelte/icons/trash";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import * as DropdownMenu from "$lib/components/ui-rtl/dropdown-menu/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 
 	let { items } = $props();
 
@@ -12,7 +12,7 @@
 </script>
 
 <Sidebar.Group class="group-data-[collapsible=icon]:hidden">
-	<Sidebar.GroupLabel>Documents</Sidebar.GroupLabel>
+	<Sidebar.GroupLabel>اسناد</Sidebar.GroupLabel>
 	<Sidebar.Menu>
 		{#each items as item (item.name)}
 			<Sidebar.MenuItem>
@@ -33,7 +33,7 @@
 								class="data-[state=open]:bg-accent rounded-sm"
 							>
 								<DotsIcon />
-								<span class="sr-only">More</span>
+								<span class="sr-only">بیشتر</span>
 							</Sidebar.MenuAction>
 						{/snippet}
 					</DropdownMenu.Trigger>
@@ -44,16 +44,16 @@
 					>
 						<DropdownMenu.Item>
 							<FolderIcon />
-							<span>Open</span>
+							<span>باز کردن</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Item>
 							<Share3Icon />
-							<span>Share</span>
+							<span>اشتراک</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
 						<DropdownMenu.Item variant="destructive">
 							<TrashIcon />
-							<span>Delete</span>
+							<span>حذف</span>
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Root>
@@ -62,7 +62,7 @@
 		<Sidebar.MenuItem>
 			<Sidebar.MenuButton class="text-sidebar-foreground/70">
 				<DotsIcon class="text-sidebar-foreground/70" />
-				<span>More</span>
+				<span>بیشتر</span>
 			</Sidebar.MenuButton>
 		</Sidebar.MenuItem>
 	</Sidebar.Menu>

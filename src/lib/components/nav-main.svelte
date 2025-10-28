@@ -1,8 +1,8 @@
 <script>
 	import CirclePlusFilledIcon from "@tabler/icons-svelte/icons/circle-plus-filled";
 	import MailIcon from "@tabler/icons-svelte/icons/mail";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { Button } from "$lib/components/ui-rtl/button/index.js";
+	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	let { items } = $props();
 </script>
 
@@ -12,10 +12,10 @@
 			<Sidebar.MenuItem class="flex items-center gap-2">
 				<Sidebar.MenuButton
 					class="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
-					tooltipContent="Quick create"
+					tooltipContent="ایجاد سریع"
 				>
 					<CirclePlusFilledIcon />
-					<span>Quick Create</span>
+					<span>ایجاد سریع</span>
 				</Sidebar.MenuButton>
 				<Button
 					size="icon"
@@ -23,7 +23,7 @@
 					variant="outline"
 				>
 					<MailIcon />
-					<span class="sr-only">Inbox</span>
+					<span class="sr-only">صندوق ورودی</span>
 				</Button>
 			</Sidebar.MenuItem>
 		</Sidebar.Menu>

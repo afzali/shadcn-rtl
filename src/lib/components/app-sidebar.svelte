@@ -21,80 +21,80 @@
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
 	const data = {
 		user: {
-			name: "shadcn",
-			email: "m@example.com",
+			name: "علی افضلی",
+			email: "ali@example.com",
 			avatar: "/avatars/shadcn.jpg",
 		},
 		navMain: [
 			{
-				title: "Dashboard",
+				title: "داشبورد",
 				url: "#",
 				icon: DashboardIcon,
 			},
 			{
-				title: "Lifecycle",
+				title: "چرخه حیات",
 				url: "#",
 				icon: ListDetailsIcon,
 			},
 			{
-				title: "Analytics",
+				title: "تحلیل‌ها",
 				url: "#",
 				icon: ChartBarIcon,
 			},
 			{
-				title: "Projects",
+				title: "پروژه‌ها",
 				url: "#",
 				icon: FolderIcon,
 			},
 			{
-				title: "Team",
+				title: "تیم",
 				url: "#",
 				icon: UsersIcon,
 			},
 		],
 		navClouds: [
 			{
-				title: "Capture",
+				title: "ضبط",
 				icon: CameraIcon,
 				isActive: true,
 				url: "#",
 				items: [
 					{
-						title: "Active Proposals",
+						title: "پیشنهادهای فعال",
 						url: "#",
 					},
 					{
-						title: "Archived",
+						title: "بایگانی شده",
 						url: "#",
 					},
 				],
 			},
 			{
-				title: "Proposal",
+				title: "پیشنهاد",
 				icon: FileDescriptionIcon,
 				url: "#",
 				items: [
 					{
-						title: "Active Proposals",
+						title: "پیشنهادهای فعال",
 						url: "#",
 					},
 					{
-						title: "Archived",
+						title: "بایگانی شده",
 						url: "#",
 					},
 				],
 			},
 			{
-				title: "Prompts",
+				title: "دستورات",
 				icon: FileAiIcon,
 				url: "#",
 				items: [
 					{
-						title: "Active Proposals",
+						title: "پیشنهادهای فعال",
 						url: "#",
 					},
 					{
-						title: "Archived",
+						title: "بایگانی شده",
 						url: "#",
 					},
 				],
@@ -102,34 +102,34 @@
 		],
 		navSecondary: [
 			{
-				title: "Settings",
+				title: "تنظیمات",
 				url: "#",
 				icon: SettingsIcon,
 			},
 			{
-				title: "Get Help",
+				title: "دریافت کمک",
 				url: "#",
 				icon: HelpIcon,
 			},
 			{
-				title: "Search",
+				title: "جستجو",
 				url: "#",
 				icon: SearchIcon,
 			},
 		],
 		documents: [
 			{
-				name: "Data Library",
+				name: "کتابخانه داده",
 				url: "#",
 				icon: DatabaseIcon,
 			},
 			{
-				name: "Reports",
+				name: "گزارش‌ها",
 				url: "#",
 				icon: ReportIcon,
 			},
 			{
-				name: "Word Assistant",
+				name: "دستیار نوشتاری",
 				url: "#",
 				icon: FileWordIcon,
 			},
@@ -146,9 +146,9 @@
 				<Sidebar.MenuButton class="data-[slot=sidebar-menu-button]:!p-1.5">
 					{#snippet child({ props })}
 						<a href="##" {...props}>
-							<InnerShadowTopIcon class="!size-5" />
-							<span class="text-base font-semibold">Acme Inc.</span>
-						</a>
+						<InnerShadowTopIcon class="!size-5" />
+						<span class="text-base font-semibold">شرکت آکمی</span>
+					</a>
 					{/snippet}
 				</Sidebar.MenuButton>
 			</Sidebar.MenuItem>

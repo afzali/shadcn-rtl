@@ -1,8 +1,8 @@
 <script>
-	import * as Chart from "$lib/components/ui/chart/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import * as Select from "$lib/components/ui/select/index.js";
-	import * as ToggleGroup from "$lib/components/ui/toggle-group/index.js";
+	import * as Chart from "$lib/components/ui-rtl/chart/index.js";
+	import * as Card from "$lib/components/ui-rtl/card/index.js";
+	import * as Select from "$lib/components/ui-rtl/select/index.js";
+	import * as ToggleGroup from "$lib/components/ui-rtl/toggle-group/index.js";
 	import { scaleUtc } from "d3-scale";
 	import { Area, AreaChart } from "layerchart";
 	import { curveNatural } from "d3-shape";
@@ -106,13 +106,13 @@
 	const selectedLabel = $derived.by(() => {
 		switch (timeRange) {
 			case "90d":
-				return "Last 3 months";
+				return "آخرین ۳ ماه";
 			case "30d":
-				return "Last 30 days";
+				return "آخرین ۳۰ روز";
 			case "7d":
-				return "Last 7 days";
+				return "آخرین ۷ روز";
 			default:
-				return "Last 3 months";
+				return "آخرین ۳ ماه";
 		}
 	});
 
@@ -133,18 +133,18 @@
 	);
 
 	const chartConfig = {
-		desktop: { label: "Desktop", color: "var(--primary)" },
-		mobile: { label: "Mobile", color: "var(--primary)" },
+		desktop: { label: "دسکتاپ", color: "var(--primary)" },
+		mobile: { label: "موبایل", color: "var(--primary)" },
 	};
 
 </script>
 
 <Card.Root class="@container/card">
 	<Card.Header>
-		<Card.Title>Total Visitors</Card.Title>
+		<Card.Title>کل بازدیدکنندگان</Card.Title>
 		<Card.Description>
-			<span class="@[540px]/card:block hidden"> Total for the last 3 months </span>
-			<span class="@[540px]/card:hidden">Last 3 months</span>
+			<span class="@[540px]/card:block hidden"> مجموع ۳ ماه گذشته </span>
+			<span class="@[540px]/card:hidden">۳ ماه گذشته</span>
 		</Card.Description>
 		<Card.Action>
 			<ToggleGroup.Root
@@ -153,9 +153,9 @@
 				variant="outline"
 				class="@[767px]/card:flex hidden *:data-[slot=toggle-group-item]:!px-4"
 			>
-				<ToggleGroup.Item value="90d">Last 3 months</ToggleGroup.Item>
-				<ToggleGroup.Item value="30d">Last 30 days</ToggleGroup.Item>
-				<ToggleGroup.Item value="7d">Last 7 days</ToggleGroup.Item>
+				<ToggleGroup.Item value="90d">۳ ماه گذشته</ToggleGroup.Item>
+				<ToggleGroup.Item value="30d">۳۰ روز گذشته</ToggleGroup.Item>
+				<ToggleGroup.Item value="7d">۷ روز گذشته</ToggleGroup.Item>
 			</ToggleGroup.Root>
 			<Select.Root type="single" bind:value={timeRange}>
 				<Select.Trigger
@@ -168,9 +168,9 @@
 					</span>
 				</Select.Trigger>
 				<Select.Content class="rounded-xl">
-					<Select.Item value="90d" class="rounded-lg">Last 3 months</Select.Item>
-					<Select.Item value="30d" class="rounded-lg">Last 30 days</Select.Item>
-					<Select.Item value="7d" class="rounded-lg">Last 7 days</Select.Item>
+					<Select.Item value="90d" class="rounded-lg">آخرین ۳ ماه</Select.Item>
+					<Select.Item value="30d" class="rounded-lg">آخرین ۳۰ روز</Select.Item>
+					<Select.Item value="7d" class="rounded-lg">آخرین ۷ روز</Select.Item>
 				</Select.Content>
 			</Select.Root>
 		</Card.Action>
@@ -185,12 +185,12 @@
 				series={[
 					{
 						key: "mobile",
-						label: "Mobile",
+						label: "موبایل",
 						color: chartConfig.mobile.color,
 					},
 					{
 						key: "desktop",
-						label: "Desktop",
+						label: "دسکتاپ",
 						color: chartConfig.desktop.color,
 					},
 				]}

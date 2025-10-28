@@ -26,6 +26,7 @@ const SPECIAL_RTL_COMPONENTS = {
 	'toggle-group': ['toggle-group-item.svelte'],
 	'progress': ['progress.svelte'],
 	'slider': ['slider.svelte'],
+	'chart': ['chart-utils.js'],
 };
 
 // Read all component directories
@@ -319,6 +320,11 @@ function convertToCnRtl(content, fileName) {
 			/<SliderPrimitive\.Root\s+bind:ref\s+bind:value={value}\s+data-slot="slider"\s+{orientation}/g,
 			'<SliderPrimitive.Root\n\tbind:ref\n\tbind:value={value}\n\tdata-slot="slider"\n\t{orientation}\n\tdir="rtl"'
 		);
+	}
+	
+	// Special handling for chart-utils.js: re-export from base component
+	if (fileName === 'chart-utils.js') {
+		content = 'export { getPayloadConfigFromPayload, setChartContext, useChart, THEMES } from "$lib/components/ui/chart/chart-utils.js";\n';
 	}
 	
 	return content;
