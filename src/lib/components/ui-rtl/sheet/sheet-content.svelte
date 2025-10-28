@@ -11,7 +11,7 @@
 			},
 		},
 		defaultVariants: {
-			side: "right",
+			side: "left",
 		},
 	});
 </script>
@@ -25,7 +25,7 @@
 	let {
 		ref = $bindable(null),
 		class: className,
-		side = "right",
+		side = "left",
 		portalProps,
 		children,
 		...restProps
@@ -35,14 +35,15 @@
 <SheetPrimitive.Portal {...portalProps}>
 	<SheetOverlay />
 	<SheetPrimitive.Content
-		bind:ref
-		data-slot="sheet-content"
+	bind:ref
+	data-slot="sheet-content"
+	dir="rtl"
 		class={cnRtl(sheetVariants({ side }), className)}
 		{...restProps}
 	>
 		{@render children?.()}
 		<SheetPrimitive.Close
-			class="ring-offset-background focus-visible:ring-ring rounded-xs focus-visible:outline-hidden absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none"
+			class="ring-offset-background focus-visible:ring-ring rounded-xs focus-visible:outline-hidden absolute left-4 top-4 opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none"
 		>
 			<XIcon class="size-4" />
 			<span class="sr-only">Close</span>

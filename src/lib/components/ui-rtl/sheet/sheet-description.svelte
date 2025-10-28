@@ -1,7 +1,17 @@
 <script>
-	import BaseSheetDescription from '$lib/components/ui/sheet/sheet-description.svelte';
-	
-	let props = $props();
+	import { Dialog as SheetPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseSheetDescription {...props} />
+<SheetPrimitive.Description
+	bind:ref
+	data-slot="sheet-description"
+	class={cnRtl("text-muted-foreground text-sm text-right", className)}
+	{...restProps}
+/>

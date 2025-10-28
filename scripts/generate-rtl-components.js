@@ -10,19 +10,22 @@ const RTL_DIR = path.join(__dirname, '../src/lib/components/ui-rtl');
 
 // Components that need special RTL handling
 const SPECIAL_RTL_COMPONENTS = {
-	'sheet': ['sheet-content.svelte'],
-	'drawer': ['drawer-content.svelte'],
-	'dropdown-menu': ['dropdown-menu-content.svelte', 'dropdown-menu-item.svelte', 'dropdown-menu-shortcut.svelte', 'dropdown-menu-label.svelte'],
-	'select': ['select-content.svelte'],
-	'context-menu': ['context-menu-content.svelte'],
-	'menubar': ['menubar-content.svelte'],
-	'dialog': ['dialog-content.svelte'],
-	'pagination': ['pagination-content.svelte', 'pagination-prev.svelte', 'pagination-next.svelte'],
-	'sidebar': ['sidebar-content.svelte', 'sidebar-menu-sub.svelte', 'sidebar-menu-sub-button.svelte', 'sidebar-menu-button.svelte'],
-	'navigation-menu': ['navigation-menu-content.svelte'],
-	'calendar': ['calendar.svelte'],
-	'range-calendar': ['range-calendar.svelte'],
 	'switch': ['switch.svelte'],
+	'drawer': ['drawer-content.svelte'],
+	'sheet': ['sheet-content.svelte', 'sheet-title.svelte', 'sheet-description.svelte'],
+	'dropdown-menu': ['dropdown-menu-content.svelte', 'dropdown-menu-sub-content.svelte', 'dropdown-menu-label.svelte'],
+	'breadcrumb': ['breadcrumb-separator.svelte'],
+	'input-group': ['input-group-addon.svelte'],
+	'hover-card': ['hover-card-content.svelte'],
+	'popover': ['popover-content.svelte'],
+	'tooltip': ['tooltip-content.svelte'],
+	'card': ['card-header.svelte'],
+	'dialog': ['dialog-content.svelte', 'dialog-title.svelte', 'dialog-description.svelte'],
+	'alert-dialog': ['alert-dialog-content.svelte', 'alert-dialog-title.svelte', 'alert-dialog-description.svelte'],
+	'select': ['select-content.svelte'],
+	'toggle-group': ['toggle-group-item.svelte'],
+	'progress': ['progress.svelte'],
+	'slider': ['slider.svelte'],
 };
 
 // Read all component directories
@@ -96,6 +99,225 @@ function convertToCnRtl(content, fileName) {
 		content = content.replace(
 			/side="right"/g,
 			'side="left"'
+		);
+	}
+	
+	// Special handling for breadcrumb-separator: change ChevronRight to ChevronLeft
+	if (fileName === 'breadcrumb-separator.svelte') {
+		content = content.replace(
+			/import ChevronRightIcon from "@lucide\/svelte\/icons\/chevron-right"/g,
+			'import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left"'
+		);
+		content = content.replace(
+			/<ChevronRightIcon \/>/g,
+			'<ChevronLeftIcon />'
+		);
+	}
+	
+	// Special handling for input-group-addon: swap inline-start/end behavior
+	if (fileName === 'input-group-addon.svelte') {
+		// We need to swap the entire variant definitions for inline-start and inline-end
+		// inline-start should become what inline-end was (order-last, pr-3, mr)
+		// inline-end should become what inline-start was (order-first, pl-3, ml)
+		content = content.replace(
+			/"inline-start":\s*"order-first pl-3 has-\[>button\]:ml-\[-0\.45rem\] has-\[>kbd\]:ml-\[-0\.35rem\]"/g,
+			'"inline-start": "order-last pr-3 has-[>button]:mr-[-0.45rem] has-[>kbd]:mr-[-0.35rem]"'
+		);
+		content = content.replace(
+			/"inline-end":\s*"order-last pr-3 has-\[>button\]:mr-\[-0\.45rem\] has-\[>kbd\]:mr-\[-0\.35rem\]"/g,
+			'"inline-end": "order-first pl-3 has-[>button]:ml-[-0.45rem] has-[>kbd]:ml-[-0.35rem]"'
+		);
+	}
+	
+	// Special handling for sheet-content: change default side from right to left
+	if (fileName === 'sheet-content.svelte') {
+		content = content.replace(
+			/side = "right"/g,
+			'side = "left"'
+		);
+		content = content.replace(
+			/side: "right"/g,
+			'side: "left"'
+		);
+	}
+	
+	// Special handling for toggle-group-item: swap rounded corners
+	if (fileName === 'toggle-group-item.svelte') {
+		content = content.replace(
+			/first:rounded-l-md last:rounded-r-md/g,
+			'first:rounded-r-md last:rounded-l-md'
+		);
+	}
+	
+	// Special handling for dropdown-menu-label: add text-right
+	if (fileName === 'dropdown-menu-label.svelte') {
+		content = content.replace(
+			/"px-2 py-1\.5 text-sm font-semibold data-\[inset\]:pl-8"/g,
+			'"px-2 py-1.5 text-sm font-semibold text-right data-[inset]:pr-8"'
+		);
+	}
+	
+	// Special handling for popover-content: add text-right and dir="rtl"
+	if (fileName === 'popover-content.svelte') {
+		content = content.replace(
+			/"bg-popover text-popover-foreground data-\[state=open\]:animate-in/g,
+			'"bg-popover text-popover-foreground text-right dir-rtl data-[state=open]:animate-in'
+		);
+	}
+	
+	// Special handling for hover-card-content: add text-right and dir="rtl"
+	if (fileName === 'hover-card-content.svelte') {
+		content = content.replace(
+			/"bg-popover text-popover-foreground data-\[state=open\]:animate-in/g,
+			'"bg-popover text-popover-foreground text-right dir-rtl data-[state=open]:animate-in'
+		);
+	}
+	
+	// Special handling for tooltip-content: add text-right and dir="rtl"
+	if (fileName === 'tooltip-content.svelte') {
+		content = content.replace(
+			/"bg-primary text-primary-foreground animate-in/g,
+			'"bg-primary text-primary-foreground text-right dir-rtl animate-in'
+		);
+	}
+	
+	// Special handling for select-content: add text-right and dir="rtl"
+	if (fileName === 'select-content.svelte') {
+		content = content.replace(
+			/"bg-popover text-popover-foreground data-\[state=open\]:animate-in/g,
+			'"bg-popover text-popover-foreground text-right dir-rtl data-[state=open]:animate-in'
+		);
+	}
+	
+	// Special handling for dialog-title: add text-right
+	if (fileName === 'dialog-title.svelte') {
+		content = content.replace(
+			/"text-lg font-semibold leading-none"/g,
+			'"text-lg font-semibold leading-none text-right"'
+		);
+	}
+	
+	// Special handling for dialog-description: add text-right
+	if (fileName === 'dialog-description.svelte') {
+		content = content.replace(
+			/"text-muted-foreground text-sm"/g,
+			'"text-muted-foreground text-sm text-right"'
+		);
+	}
+	
+	// Special handling for alert-dialog-title: add text-right
+	if (fileName === 'alert-dialog-title.svelte') {
+		content = content.replace(
+			/"text-lg font-semibold"/g,
+			'"text-lg font-semibold text-right"'
+		);
+	}
+	
+	// Special handling for alert-dialog-description: add text-right
+	if (fileName === 'alert-dialog-description.svelte') {
+		content = content.replace(
+			/"text-muted-foreground text-sm"/g,
+			'"text-muted-foreground text-sm text-right"'
+		);
+	}
+	
+	// Special handling for sheet-title: add text-right
+	if (fileName === 'sheet-title.svelte') {
+		content = content.replace(
+			/"text-foreground font-semibold"/g,
+			'"text-foreground font-semibold text-right"'
+		);
+	}
+	
+	// Special handling for sheet-description: add text-right
+	if (fileName === 'sheet-description.svelte') {
+		content = content.replace(
+			/"text-muted-foreground text-sm"/g,
+			'"text-muted-foreground text-sm text-right"'
+		);
+	}
+	
+	// Special handling for dialog-content: add dir="rtl" to content wrapper
+	if (fileName === 'dialog-content.svelte') {
+		// Add dir="rtl" attribute to DialogPrimitive.Content
+		content = content.replace(
+			/<DialogPrimitive\.Content\s+bind:ref\s+data-slot="dialog-content"/g,
+			'<DialogPrimitive.Content\n\tbind:ref\n\tdata-slot="dialog-content"\n\tdir="rtl"'
+		);
+		// Change close button from start-4 to end-4 (so it appears on left in RTL)
+		content = content.replace(
+			/absolute start-4 top-4/g,
+			'absolute end-4 top-4'
+		);
+	}
+	
+	// Special handling for alert-dialog-content: add dir="rtl"
+	if (fileName === 'alert-dialog-content.svelte') {
+		content = content.replace(
+			/<AlertDialogPrimitive\.Content\s+bind:ref\s+data-slot="alert-dialog-content"/g,
+			'<AlertDialogPrimitive.Content\n\tbind:ref\n\tdata-slot="alert-dialog-content"\n\tdir="rtl"'
+		);
+	}
+	
+	// Special handling for sheet-content: add dir="rtl"
+	if (fileName === 'sheet-content.svelte') {
+		content = content.replace(
+			/<SheetPrimitive\.Content\s+bind:ref\s+data-slot="sheet-content"/g,
+			'<SheetPrimitive.Content\n\tbind:ref\n\tdata-slot="sheet-content"\n\tdir="rtl"'
+		);
+		// Change close button from right-4 to left-4 (so it appears on left in RTL)
+		content = content.replace(
+			/absolute right-4 top-4/g,
+			'absolute left-4 top-4'
+		);
+	}
+	
+	// Special handling for hover-card-content: add dir="rtl"
+	if (fileName === 'hover-card-content.svelte') {
+		content = content.replace(
+			/<HoverCardPrimitive\.Content\s+bind:ref\s+data-slot="hover-card-content"/g,
+			'<HoverCardPrimitive.Content\n\tbind:ref\n\tdata-slot="hover-card-content"\n\tdir="rtl"'
+		);
+	}
+	
+	// Special handling for popover-content: add dir="rtl"
+	if (fileName === 'popover-content.svelte') {
+		content = content.replace(
+			/<PopoverPrimitive\.Content\s+bind:ref\s+data-slot="popover-content"/g,
+			'<PopoverPrimitive.Content\n\tbind:ref\n\tdata-slot="popover-content"\n\tdir="rtl"'
+		);
+	}
+	
+	// Special handling for tooltip-content: add dir="rtl"
+	if (fileName === 'tooltip-content.svelte') {
+		content = content.replace(
+			/<TooltipPrimitive\.Content\s+bind:ref\s+data-slot="tooltip-content"/g,
+			'<TooltipPrimitive.Content\n\tbind:ref\n\tdata-slot="tooltip-content"\n\tdir="rtl"'
+		);
+	}
+	
+	// Special handling for select-content: add dir="rtl"
+	if (fileName === 'select-content.svelte') {
+		content = content.replace(
+			/<SelectPrimitive\.Content\s+bind:ref\s+{sideOffset}\s+data-slot="select-content"/g,
+			'<SelectPrimitive.Content\n\tbind:ref\n\t{sideOffset}\n\tdata-slot="select-content"\n\tdir="rtl"'
+		);
+	}
+	
+	// Special handling for progress: flip translateX direction for RTL
+	if (fileName === 'progress.svelte') {
+		content = content.replace(
+			/style="transform: translateX\(-{100 - \(100 \* \(value \?\? 0\)\) \/ \(max \?\? 1\)}%\)"/g,
+			'style="transform: translateX({100 - (100 * (value ?? 0)) / (max ?? 1)}%) scaleX(-1)"'
+		);
+	}
+	
+	// Special handling for slider: add dir="rtl" for RTL
+	if (fileName === 'slider.svelte') {
+		// Add dir="rtl" to SliderPrimitive.Root
+		content = content.replace(
+			/<SliderPrimitive\.Root\s+bind:ref\s+bind:value={value}\s+data-slot="slider"\s+{orientation}/g,
+			'<SliderPrimitive.Root\n\tbind:ref\n\tbind:value={value}\n\tdata-slot="slider"\n\t{orientation}\n\tdir="rtl"'
 		);
 	}
 	

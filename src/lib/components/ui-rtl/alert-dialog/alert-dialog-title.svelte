@@ -1,7 +1,17 @@
 <script>
-	import BaseAlertDialogTitle from '$lib/components/ui/alert-dialog/alert-dialog-title.svelte';
-	
-	let props = $props();
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseAlertDialogTitle {...props} />
+<AlertDialogPrimitive.Title
+	bind:ref
+	data-slot="alert-dialog-title"
+	class={cnRtl("text-lg font-semibold text-right", className)}
+	{...restProps}
+/>

@@ -42,7 +42,11 @@ function convertToRtl(classNames) {
 	result = result.replace(/__RTL_TEXT_LEFT__/g, 'text-right');
 	
 	// Handle left-[...] and right-[...] arbitrary values
-	result = result.replace(/\bleft-(\[[^\]]+\])/g, '__RTL_LEFT__$1');
+	// BUT skip left-[50%] which is used for centering
+	result = result.replace(/\bleft-(\[[^\]]+\])/g, (match, value) => {
+		if (value === '[50%]') return match; // Don't convert centering
+		return '__RTL_LEFT__' + value;
+	});
 	result = result.replace(/\bright-(\[[^\]]+\])/g, 'left-$1');
 	result = result.replace(/__RTL_LEFT__/g, 'right-');
 	
@@ -57,9 +61,12 @@ function convertToRtl(classNames) {
 	
 	// General translate-x-[...] patterns (not part of data-[state)
 	// Also handle negative translate-x like -translate-x-[-50%]
+	// BUT skip translate-x-[-50%] which is used for centering
 	result = result.replace(
 		/(?<!data-\[state=(?:checked|unchecked)\]:)(?<!__RTL_FLIP__)(-?)translate-x-(\[[^\]]+\])/g,
 		(match, minus, value) => {
+			// Skip centering transforms
+			if (value === '[-50%]' || value === '[50%]') return match;
 			// If it has minus, remove it; if not, add it
 			return minus ? `__RTL_FLIP__translate-x-${value}` : `__RTL_FLIP__-translate-x-${value}`;
 		}

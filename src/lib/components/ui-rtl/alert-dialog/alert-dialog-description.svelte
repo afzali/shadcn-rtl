@@ -1,7 +1,17 @@
 <script>
-	import BaseAlertDialogDescription from '$lib/components/ui/alert-dialog/alert-dialog-description.svelte';
-	
-	let props = $props();
+	import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseAlertDialogDescription {...props} />
+<AlertDialogPrimitive.Description
+	bind:ref
+	data-slot="alert-dialog-description"
+	class={cnRtl("text-muted-foreground text-sm text-right", className)}
+	{...restProps}
+/>

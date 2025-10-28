@@ -1,7 +1,17 @@
 <script>
-	import BaseDialogTitle from '$lib/components/ui/dialog/dialog-title.svelte';
-	
-	let props = $props();
+	import { Dialog as DialogPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseDialogTitle {...props} />
+<DialogPrimitive.Title
+	bind:ref
+	data-slot="dialog-title"
+	class={cnRtl("text-lg font-semibold leading-none text-right", className)}
+	{...restProps}
+/>

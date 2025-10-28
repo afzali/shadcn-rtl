@@ -1,7 +1,17 @@
 <script>
-	import BaseSheetTitle from '$lib/components/ui/sheet/sheet-title.svelte';
-	
-	let props = $props();
+	import { Dialog as SheetPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseSheetTitle {...props} />
+<SheetPrimitive.Title
+	bind:ref
+	data-slot="sheet-title"
+	class={cnRtl("text-foreground font-semibold text-right", className)}
+	{...restProps}
+/>

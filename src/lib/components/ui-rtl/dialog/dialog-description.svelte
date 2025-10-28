@@ -1,7 +1,17 @@
 <script>
-	import BaseDialogDescription from '$lib/components/ui/dialog/dialog-description.svelte';
-	
-	let props = $props();
+	import { Dialog as DialogPrimitive } from "bits-ui";
+	import { cnRtl } from "$lib/rtl-utils.js";
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		...restProps
+	} = $props();
 </script>
 
-<BaseDialogDescription {...props} />
+<DialogPrimitive.Description
+	bind:ref
+	data-slot="dialog-description"
+	class={cnRtl("text-muted-foreground text-sm text-right", className)}
+	{...restProps}
+/>
