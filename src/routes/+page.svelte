@@ -1,205 +1,112 @@
 <script>
-	import { Tabs, TabsList, TabsTrigger, TabsContent } from "$lib/components/ui-rtl/tabs";
 	import { Button } from "$lib/components/ui-rtl/button";
-	import { ToggleGroup, ToggleGroupItem } from "$lib/components/ui-rtl/toggle-group";
-	import { Separator } from "$lib/components/ui-rtl/separator";
-	import MonitorIcon from "@lucide/svelte/icons/monitor";
-	import TabletIcon from "@lucide/svelte/icons/tablet";
-	import SmartphoneIcon from "@lucide/svelte/icons/smartphone";
-	import FullscreenIcon from "@lucide/svelte/icons/fullscreen";
-	import RotateCcwIcon from "@lucide/svelte/icons/rotate-ccw";
-	import SunIcon from "@lucide/svelte/icons/sun";
-	import MoonIcon from "@lucide/svelte/icons/moon";
+	import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "$lib/components/ui-rtl/card";
+	import { Badge } from "$lib/components/ui-rtl/badge";
+	import LogInIcon from "@lucide/svelte/icons/log-in";
+	import UserPlusIcon from "@lucide/svelte/icons/user-plus";
+	import ShieldCheckIcon from "@lucide/svelte/icons/shield-check";
+	import LayoutDashboardIcon from "@lucide/svelte/icons/layout-dashboard";
+	import PanelLeftIcon from "@lucide/svelte/icons/panel-left";
+	import ComponentIcon from "@lucide/svelte/icons/component";
+	import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left";
 	
-	let isDark = $state(false);
-	let iframeWidths = $state({});
-	
-	function toggleTheme() {
-		isDark = !isDark;
-		document.documentElement.classList.toggle('dark');
-		
-		// Apply theme to all iframes
-		const iframes = document.querySelectorAll('iframe');
-		iframes.forEach(iframe => {
-			try {
-				if (iframe.contentDocument) {
-					iframe.contentDocument.documentElement.classList.toggle('dark');
-				}
-			} catch (e) {
-				// Cross-origin iframe, can't access
-			}
-		});
-	}
-	
-	function setIframeWidth(itemId, width) {
-		iframeWidths[itemId] = width;
-	}
-	
-	function refreshIframe(itemId) {
-		const iframe = document.getElementById(`iframe-${itemId}`);
-		if (iframe) {
-			iframe.src = iframe.src;
+	const categories = [
+		{
+			title: 'صفحات ورود',
+			description: '5 نمونه صفحه ورود با طراحی‌های متنوع',
+			icon: LogInIcon,
+			href: '/login',
+			count: 5,
+			color: 'text-blue-500'
+		},
+		{
+			title: 'صفحات ثبت‌نام',
+			description: '5 نمونه صفحه ثبت‌نام با طراحی‌های مختلف',
+			icon: UserPlusIcon,
+			href: '/signup',
+			count: 5,
+			color: 'text-green-500'
+		},
+		{
+			title: 'صفحات تایید کد',
+			description: '5 نمونه صفحه تایید کد OTP',
+			icon: ShieldCheckIcon,
+			href: '/otp',
+			count: 5,
+			color: 'text-purple-500'
+		},
+		{
+			title: 'منوهای کناری',
+			description: '16 نمونه منوی کناری با طراحی‌های مختلف',
+			icon: PanelLeftIcon,
+			href: '/sidebar',
+			count: 16,
+			color: 'text-orange-500'
+		},
+		{
+			title: 'داشبورد',
+			description: 'داشبورد کامل با تمام امکانات',
+			icon: LayoutDashboardIcon,
+			href: '/dashboard',
+			count: 1,
+			color: 'text-pink-500'
+		},
+		{
+			title: 'دمو کامپوننت‌ها',
+			description: 'نمایش 54 کامپوننت RTL',
+			icon: ComponentIcon,
+			href: '/rtl-demo',
+			count: 54,
+			color: 'text-cyan-500'
 		}
-	}
-	
-	function onIframeLoad(event) {
-		const iframe = event.target;
-		try {
-			if (iframe.contentDocument && isDark) {
-				iframe.contentDocument.documentElement.classList.add('dark');
-			}
-		} catch (e) {
-			// Cross-origin iframe
-		}
-	}
-	
-	const blocks = {
-		login: [
-			{ id: 'login-01', title: 'نمونه 1', desc: 'ساده و تمیز' },
-			{ id: 'login-02', title: 'نمونه 2', desc: 'با تصویر کناری' },
-			{ id: 'login-03', title: 'نمونه 3', desc: 'با پس‌زمینه' },
-			{ id: 'login-04', title: 'نمونه 4', desc: 'تمام صفحه' },
-			{ id: 'login-05', title: 'نمونه 5', desc: 'مینیمال' }
-		],
-		signup: [
-			{ id: 'signup-01', title: 'نمونه 1', desc: 'ساده و تمیز' },
-			{ id: 'signup-02', title: 'نمونه 2', desc: 'با تصویر کناری' },
-			{ id: 'signup-03', title: 'نمونه 3', desc: 'با پس‌زمینه' },
-			{ id: 'signup-04', title: 'نمونه 4', desc: 'تمام صفحه' },
-			{ id: 'signup-05', title: 'نمونه 5', desc: 'مینیمال' }
-		],
-		otp: [
-			{ id: 'otp-01', title: 'نمونه 1', desc: 'ساده و تمیز' },
-			{ id: 'otp-02', title: 'نمونه 2', desc: 'با تصویر کناری' },
-			{ id: 'otp-03', title: 'نمونه 3', desc: 'با پس‌زمینه' },
-			{ id: 'otp-04', title: 'نمونه 4', desc: 'تمام صفحه' },
-			{ id: 'otp-05', title: 'نمونه 5', desc: 'مینیمال' }
-		],
-		sidebar: Array.from({ length: 16 }, (_, i) => ({
-			id: `sidebar-${String(i + 1).padStart(2, '0')}`,
-			title: `نمونه ${i + 1}`,
-			desc: `Sidebar ${i + 1}`
-		})),
-		dashboard: [
-			{ id: 'dashboard-01', title: 'داشبورد', desc: 'داشبورد کامل' }
-		],
-		other: [
-			{ id: 'rtl-demo', title: 'دمو کامپوننت‌ها', desc: 'نمایش 54 کامپوننت RTL' }
-		]
-	};
-	
-	let activeTab = $state('login');
-	let activeBlock = $state(blocks.login[0].id);
-	
-	$effect(() => {
-		if (activeTab && blocks[activeTab]) {
-			activeBlock = blocks[activeTab][0].id;
-		}
-	});
+	];
 </script>
 
-<div class="min-h-screen bg-background">
-	<div class="container mx-auto p-6 space-y-8">
-		<!-- Header -->
-		<div class="text-center space-y-4 py-8">
-			<div class="flex items-center justify-between">
-				<div class="flex-1"></div>
-				<div class="flex-1 text-center">
-					<h1 class="text-4xl font-bold">قالب مدیریتی فارسی</h1>
-					<p class="text-lg text-muted-foreground mt-2">
-						30+ صفحه آماده با پشتیبانی کامل RTL و فونت فارسی
-					</p>
-				</div>
-				<div class="flex-1 flex justify-end">
-					<Button onclick={toggleTheme} variant="outline" size="icon" title={isDark ? 'حالت روشن' : 'حالت تاریک'}>
-						{#if isDark}
-							<SunIcon class="size-5" />
-						{:else}
-							<MoonIcon class="size-5" />
-						{/if}
-					</Button>
-				</div>
-			</div>
-			<div class="flex gap-4 justify-center">
-				<Button href="/rtl-demo" variant="outline">دمو کامپوننت‌ها</Button>
-			</div>
+<div class="min-h-screen bg-gradient-to-b from-background to-muted/20">
+	<div class="container mx-auto px-6 py-16 space-y-16">
+		<!-- Hero Section -->
+		<div class="text-center space-y-6 max-w-3xl mx-auto">
+			<Badge variant="outline" class="text-sm px-4 py-1">
+				✨ نسخه 1.0
+			</Badge>
+			<h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-l from-primary to-primary/60 bg-clip-text text-transparent">
+				قالب مدیریتی فارسی
+			</h1>
+			<p class="text-xl text-muted-foreground">
+				30+ صفحه آماده با پشتیبانی کامل RTL و 54 کامپوننت فارسی
+			</p>
+			
 		</div>
 
-		<!-- Main Tabs -->
-		<Tabs bind:value={activeTab} class="w-full">
-			<TabsList class="grid w-full grid-cols-6 mb-8">
-				<TabsTrigger value="login">ورود</TabsTrigger>
-				<TabsTrigger value="signup">ثبت‌نام</TabsTrigger>
-				<TabsTrigger value="otp">تایید کد</TabsTrigger>
-				<TabsTrigger value="sidebar">منوی کناری</TabsTrigger>
-				<TabsTrigger value="dashboard">داشبورد</TabsTrigger>
-				<TabsTrigger value="other">سایر</TabsTrigger>
-			</TabsList>
-
-			{#each Object.entries(blocks) as [category, items]}
-				<TabsContent value={category} class="space-y-8">
-					{#each items as item, index}
-						<div class="space-y-4">
-							<!-- Header with Controls -->
-							<div class="flex items-start justify-between border-b pb-4">
-								<div class="space-y-1">
-									<h3 class="text-xl font-semibold">{item.title} - {item.desc}</h3>
-									<p class="text-sm text-muted-foreground">
-										📁 فایل: <code class="bg-muted px-2 py-0.5 rounded">src/routes/{item.id}/+page.svelte</code>
-									</p>
-									<p class="text-sm text-muted-foreground">
-										🔗 آدرس: <code class="bg-muted px-2 py-0.5 rounded">/{item.id}</code>
-									</p>
+		<!-- Categories Grid -->
+		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{#each categories as category}
+				<a href={category.href} class="group">
+					<Card class="h-full transition-all hover:shadow-lg hover:scale-[1.02]">
+						<CardHeader>
+							<div class="flex items-start justify-between">
+								<div class="p-3 rounded-lg bg-muted group-hover:bg-primary/10 transition-colors">
+									<svelte:component this={category.icon} class="size-6 {category.color}" />
 								</div>
-								
-								<!-- Controls -->
-								<div class="flex items-center gap-2">
-									<ToggleGroup type="single" value={iframeWidths[item.id] || '100'} onValueChange={(v) => setIframeWidth(item.id, v)} class="gap-1">
-										<ToggleGroupItem value="100" title="Desktop" class="size-8 p-0">
-											<MonitorIcon class="size-4" />
-										</ToggleGroupItem>
-										<ToggleGroupItem value="60" title="Tablet" class="size-8 p-0">
-											<TabletIcon class="size-4" />
-										</ToggleGroupItem>
-										<ToggleGroupItem value="30" title="Mobile" class="size-8 p-0">
-											<SmartphoneIcon class="size-4" />
-										</ToggleGroupItem>
-									</ToggleGroup>
-									
-									<Separator orientation="vertical" class="h-6" />
-									
-									<Button href="/{item.id}" target="_blank" variant="ghost" size="icon" class="size-8" title="باز کردن در تب جدید">
-										<FullscreenIcon class="size-4" />
-									</Button>
-									
-									<Separator orientation="vertical" class="h-6" />
-									
-									<Button onclick={() => refreshIframe(item.id)} variant="ghost" size="icon" class="size-8" title="بارگذاری مجدد">
-										<RotateCcwIcon class="size-4" />
-									</Button>
-								</div>
+								<Badge variant="secondary">{category.count}</Badge>
 							</div>
-							
-							<!-- iframe Preview -->
-							<div class="border rounded-lg overflow-hidden bg-muted/50 shadow-sm mx-auto transition-all duration-300" style="width: {iframeWidths[item.id] || '100'}%">
-								<iframe
-									id="iframe-{item.id}"
-									src="/{item.id}"
-									title="{item.title}"
-									class="w-full h-[600px] bg-background"
-									loading="lazy"
-									onload={onIframeLoad}
-								></iframe>
-							</div>
-						</div>
-						
-						{#if index < items.length - 1}
-							<div class="border-t my-8"></div>
-						{/if}
-					{/each}
-				</TabsContent>
+							<CardTitle class="mt-4 group-hover:text-primary transition-colors">
+								{category.title}
+							</CardTitle>
+							<CardDescription>
+								{category.description}
+							</CardDescription>
+						</CardHeader>
+						<CardContent>
+							<Button variant="ghost" class="w-full justify-between group-hover:bg-primary/5">
+								مشاهده
+								<ArrowLeftIcon class="size-4 transition-transform group-hover:-translate-x-1" />
+							</Button>
+						</CardContent>
+					</Card>
+				</a>
 			{/each}
-		</Tabs>
+		</div>
 
 		<!-- Footer -->
 		<div class="text-center space-y-4 py-8 border-t">

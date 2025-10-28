@@ -1,5 +1,6 @@
 <script>
 	import RtlProvider from "$lib/components/rtl-provider.svelte";
+	import HomeIcon from "@lucide/svelte/icons/home";
 	
 	// 1. Accordion
 	import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "$lib/components/ui-rtl/accordion";
@@ -72,7 +73,6 @@
 	import UserIcon from "@lucide/svelte/icons/user";
 	import SettingsIcon from "@lucide/svelte/icons/settings";
 	import BellIcon from "@lucide/svelte/icons/bell";
-	import HomeIcon from "@lucide/svelte/icons/home";
 	import BoldIcon from "@lucide/svelte/icons/bold";
 	import ItalicIcon from "@lucide/svelte/icons/italic";
 	
@@ -88,20 +88,28 @@
 	let alertDialogOpen = $state(false);
 </script>
 
-<RtlProvider rtl={true} lang="fa" class="min-h-screen bg-background p-8">
-	<div class="mx-auto max-w-6xl space-y-8">
-		<!-- Header -->
-		<div class="space-y-2">
-			<h1 class="text-4xl font-bold tracking-tight">نمایش کامپوننت‌های RTL</h1>
-			<p class="text-lg text-muted-foreground">
-				مجموعه کامل کامپوننت‌های shadcn-svelte با پشتیبانی کامل از راست به چپ
-			</p>
-			<p class="text-sm text-muted-foreground">
-				✨ با فونت زیبای <span class="font-semibold">Vazirmatn</span> از Google Fonts
-			</p>
-		</div>
+<RtlProvider rtl={true} lang="fa">
+	<div class="min-h-screen bg-background p-8">
+		<div class="container mx-auto space-y-8">
+			<!-- Header -->
+			<div class="space-y-4 mb-12">
+				<div class="flex items-center justify-between">
+					<div class="flex-1"></div>
+					<div class="flex-1 text-center">
+						<h1 class="text-4xl font-bold">دمو کامپوننت‌های RTL</h1>
+						<p class="text-lg text-muted-foreground mt-2">
+							نمایش 54 کامپوننت با پشتیبانی کامل از RTL و فونت فارسی Vazirmatn
+						</p>
+					</div>
+					<div class="flex-1 flex justify-end">
+						<Button href="/" variant="outline">
+							<HomeIcon class="size-4 ml-2" />
+							بازگشت به صفحه اصلی
+						</Button>
+					</div>
+				</div>
+			</div>
 
-		<!-- Alert -->
 		<Alert>
 			<AlertTitle>خوش آمدید!</AlertTitle>
 			<AlertDescription>
