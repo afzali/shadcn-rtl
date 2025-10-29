@@ -32,14 +32,14 @@
 				side="bottom"
 				sideOffset={4}
 			>
-				<DropdownMenu.Label class="text-muted-foreground text-xs">Teams</DropdownMenu.Label>
+				<DropdownMenu.Label class="text-muted-foreground text-xs text-right">تیم ها</DropdownMenu.Label>
 				{#each teams as team, index (team.name)}
 					<DropdownMenu.Item onSelect={() => (activeTeam = team)} class="gap-2 p-2">
+						<DropdownMenu.Shortcut>⌘{index + 1}</DropdownMenu.Shortcut>
+						<span class="flex-1 text-right">{team.name}</span>
 						<div class="rounded-xs flex size-6 items-center justify-center border">
 							<team.logo class="size-4 shrink-0" />
 						</div>
-						{team.name}
-						<DropdownMenu.Shortcut>⌘{index + 1}</DropdownMenu.Shortcut>
 					</DropdownMenu.Item>
 				{/each}
 				<DropdownMenu.Separator />
@@ -49,7 +49,7 @@
 					>
 						<PlusIcon class="size-4" />
 					</div>
-					<div class="text-muted-foreground font-medium">Add team</div>
+					<div class="text-muted-foreground font-medium text-right flex-1">افزودن تیم</div>
 				</DropdownMenu.Item>
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>

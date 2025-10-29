@@ -45,7 +45,7 @@
         {#each teams as team, index (team.name)}
           <DropdownMenu.Item onSelect={() => (activeTeam = team)} class="gap-2 p-2">
             <DropdownMenu.Shortcut>⌘{index + 1}</DropdownMenu.Shortcut>
-            {team.name}
+            <span class="flex-1 text-right">{team.name}</span>
             <div class="flex size-6 items-center justify-center rounded-md border">
               <team.logo class="size-3.5 shrink-0" />
             </div>
