@@ -116,6 +116,15 @@
 	let rowSelection = $state({});
 	let columnVisibility = $state({});
 
+	const COL_TITLES = {
+		target: "هدف",
+		limit: "محدودیت",
+		reviewer: "بازبین",
+		status: "وضعیت",
+		type: "نوع بخش",
+		header: "سربرگ",
+	};
+
 	const table = createSvelteTable({
 		get data() {
 			return data;
@@ -256,7 +265,7 @@
 							checked={column.getIsVisible()}
 							onCheckedChange={(value) => column.toggleVisibility(!!value)}
 						>
-							{column.id}
+							{typeof column.columnDef.header === "string" ? column.columnDef.header : (COL_TITLES[column.id] ?? column.id)}
 						</DropdownMenu.CheckboxItem>
 					{/each}
 				</DropdownMenu.Content>
@@ -341,25 +350,7 @@
 					{table.getPageCount()}
 				</div>
 				<div class="ml-auto flex items-center gap-2 lg:ml-0">
-					<Button
-						variant="outline"
-						class="hidden h-8 w-8 p-0 lg:flex"
-						onclick={() => table.setPageIndex(0)}
-						disabled={!table.getCanPreviousPage()}
-					>
-						<span class="sr-only">برو به صفحه اول</span>
-						<ChevronsLeftIcon />
-					</Button>
-					<Button
-						variant="outline"
-						class="size-8"
-						size="icon"
-						onclick={() => table.previousPage()}
-						disabled={!table.getCanPreviousPage()}
-					>
-						<span class="sr-only">برو به صفحه قبل</span>
-						<ChevronLeftIcon />
-					</Button>
+					
 					<Button
 						variant="outline"
 						class="size-8"
@@ -379,6 +370,25 @@
 					>
 						<span class="sr-only">برو به صفحه آخر</span>
 						<ChevronsRightIcon />
+					</Button>
+					<Button
+						variant="outline"
+						class="hidden h-8 w-8 p-0 lg:flex"
+						onclick={() => table.setPageIndex(0)}
+						disabled={!table.getCanPreviousPage()}
+					>
+						<span class="sr-only">برو به صفحه اول</span>
+						<ChevronsLeftIcon />
+					</Button>
+					<Button
+						variant="outline"
+						class="size-8"
+						size="icon"
+						onclick={() => table.previousPage()}
+						disabled={!table.getCanPreviousPage()}
+					>
+						<span class="sr-only">برو به صفحه قبل</span>
+						<ChevronLeftIcon />
 					</Button>
 				</div>
 			</div>

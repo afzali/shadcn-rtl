@@ -15,7 +15,7 @@
 	import SettingsIcon from "@tabler/icons-svelte/icons/settings";
 	import UsersIcon from "@tabler/icons-svelte/icons/users";
 	import NavDocuments from "./nav-documents.svelte";
-	import NavMain from "./nav-main.svelte";
+	import NavMain from "./nav-main-04.svelte";
 	import NavSecondary from "./nav-secondary.svelte";
 	import NavUser from "./nav-user.svelte";
 	import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";

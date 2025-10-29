@@ -27,6 +27,7 @@ const SPECIAL_RTL_COMPONENTS = {
 	'progress': ['progress.svelte'],
 	'slider': ['slider.svelte'],
 	'chart': ['chart-utils.js'],
+	'sidebar': ['sidebar-menu-button.svelte', 'sidebar-menu-badge.svelte', 'sidebar-menu-action.svelte'],
 };
 
 // Read all component directories
@@ -84,17 +85,30 @@ function convertToCnRtl(content, fileName) {
 		);
 	}
 	
+	// Special handling for sidebar-menu-action: change right-1 to left-1 for RTL
+	if (fileName === 'sidebar-menu-action.svelte') {
+		content = content.replace(
+			/absolute right-1 top-1\.5/g,
+			'absolute left-1 top-1.5'
+		);
+	}
+	
 	// Special handling for sidebar-menu-button: RTL adjustments
 	if (fileName === 'sidebar-menu-button.svelte') {
+		// Change ui/tooltip to ui-rtl/tooltip
+		content = content.replace(
+			/import \* as Tooltip from "\$lib\/components\/ui\/tooltip\/index\.js"/g,
+			'import * as Tooltip from "$lib/components/ui-rtl/tooltip/index.js"'
+		);
 		// Change pr-8 to pl-8
 		content = content.replace(
 			/menu-item:pr-8/g,
 			'menu-item:pl-8'
 		);
-		// Change text-left to text-right and add flex-row-reverse
+		// Change text-left to text-right (without flex-row-reverse)
 		content = content.replace(
 			/flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm/g,
-			'flex flex-row-reverse w-full items-center gap-2 overflow-hidden rounded-md p-2 text-right text-sm'
+			'flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-right text-sm'
 		);
 		// Change tooltip side from right to left
 		content = content.replace(
