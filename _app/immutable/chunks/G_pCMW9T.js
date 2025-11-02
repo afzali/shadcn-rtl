@@ -1,0 +1,1 @@
+import"./Cm9PB-7n.js";import{s,r as t}from"./Pna8C8of.js";import{a as $,S as a}from"./Bnj5dKmi.js";function o(a,o){let e=t(o,["$$slots","$$events","$$legacy"]);$(a,s(()=>e))}function e($,o){let e=t(o,["$$slots","$$events","$$legacy"]);a($,s(()=>e))}export{e as S,o as a};

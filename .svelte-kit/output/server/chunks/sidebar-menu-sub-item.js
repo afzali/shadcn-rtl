@@ -1,0 +1,1 @@
+import{s}from"./index.js";import{a as t,S as e}from"./sidebar-menu-sub-item2.js";function o(e,o){let{$$slots:a,$$events:n,...$}=o;t(e,s([$]))}function a(t,o){let{$$slots:a,$$events:n,...$}=o;e(t,s([$]))}export{a as S,o as a};

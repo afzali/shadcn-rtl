@@ -1,0 +1,1 @@
+import{s}from"./index.js";import{c as t,b as e}from"./index2.js";function o(e,o){let{$$slots:n,$$events:$,...a}=o;t(e,s([a]))}function n(t,o){let{$$slots:n,$$events:$,...a}=o;e(t,s([a]))}export{n as S,o as a};

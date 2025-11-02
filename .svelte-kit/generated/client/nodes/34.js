@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/sidebar-16/+page.svelte";

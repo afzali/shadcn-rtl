@@ -1,0 +1,1 @@
+import{k as s,l as t,m as e}from"./index.js";import{c as o}from"./button2.js";function a(a,n){a.component(a=>{let{ref:r=null,class:l,children:c,$$slots:i,$$events:d,...p}=n;a.push(`<div${s({"data-slot":"sidebar-group-content","data-sidebar":"group-content",class:t(o("w-full text-sm",l)),...p})}>`),c?.(a),a.push("\x3c!----\x3e</div>"),e(n,{ref:r})})}export{a as S};

@@ -1,0 +1,1 @@
+import{s}from"./index.js";import{C as t,b as e,a as o}from"./collapsible-content2.js";function n(e,o){let{$$slots:n,$$events:$,...a}=o;t(e,s([a]))}function $(t,o){let{$$slots:n,$$events:$,...a}=o;e(t,s([a]))}function a(t,e){let{$$slots:n,$$events:$,...a}=e;o(t,s([a]))}export{n as C,$ as a,a as b};

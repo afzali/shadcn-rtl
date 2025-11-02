@@ -1,0 +1,1 @@
+import{k as s,l as e,m as o}from"./index.js";import{c as t}from"./button2.js";function a(a,l){a.component(a=>{let{ref:r=null,class:f,children:i,$$slots:n,$$events:c,...d}=l;a.push(`<div${s({"data-slot":"sidebar-footer","data-sidebar":"footer",class:e(t("flex flex-col gap-2 p-2",f)),...d})}>`),i?.(a),a.push("\x3c!----\x3e</div>"),o(l,{ref:r})})}export{a as S};

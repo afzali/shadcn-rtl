@@ -1,0 +1,120 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/dashboard-01": [
+		"src/routes/+layout.js"
+	],
+	"/dashboard": [
+		"src/routes/+layout.js"
+	],
+	"/login-01": [
+		"src/routes/+layout.js"
+	],
+	"/login-02": [
+		"src/routes/+layout.js"
+	],
+	"/login-03": [
+		"src/routes/+layout.js"
+	],
+	"/login-04": [
+		"src/routes/+layout.js"
+	],
+	"/login-05": [
+		"src/routes/+layout.js"
+	],
+	"/login": [
+		"src/routes/+layout.js"
+	],
+	"/otp-01": [
+		"src/routes/+layout.js"
+	],
+	"/otp-02": [
+		"src/routes/+layout.js"
+	],
+	"/otp-03": [
+		"src/routes/+layout.js"
+	],
+	"/otp-04": [
+		"src/routes/+layout.js"
+	],
+	"/otp-05": [
+		"src/routes/+layout.js"
+	],
+	"/otp": [
+		"src/routes/+layout.js"
+	],
+	"/rtl-demo": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-01": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-02": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-03": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-04": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-05": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-06": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-07": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-08": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-09": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-10": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-11": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-12": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-13": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-14": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-15": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar-16": [
+		"src/routes/+layout.js"
+	],
+	"/sidebar": [
+		"src/routes/+layout.js"
+	],
+	"/signup-01": [
+		"src/routes/+layout.js"
+	],
+	"/signup-02": [
+		"src/routes/+layout.js"
+	],
+	"/signup-03": [
+		"src/routes/+layout.js"
+	],
+	"/signup-04": [
+		"src/routes/+layout.js"
+	],
+	"/signup-05": [
+		"src/routes/+layout.js"
+	],
+	"/signup": [
+		"src/routes/+layout.js"
+	]
+}
