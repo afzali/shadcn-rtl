@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as Sidebar from "$lib/components/ui-rtl/sidebar/index.js";
+  import * as Sidebar from "$lib/components/ui/sidebar/index.js";
   import type { ComponentProps } from "svelte";
   // This is sample data.
   const data = {
