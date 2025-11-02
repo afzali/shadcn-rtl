@@ -3,6 +3,8 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import RtlProvider from '$lib/components/rtl-provider.svelte';
 	
+	export const prerender = true;
+	
 	let { children } = $props();
 </script>
 
