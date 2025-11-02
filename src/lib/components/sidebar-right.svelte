@@ -13,16 +13,16 @@
 		},
 		calendars: [
 			{
-				name: "My Calendars",
-				items: ["Personal", "Work", "Family"],
+				name: "تقویم‌های من",
+				items: ["شخصی", "کاری", "خانوادگی"],
 			},
 			{
-				name: "Favorites",
-				items: ["Holidays", "Birthdays"],
+				name: "موارد دلخواه",
+				items: ["تعطیلات", "تولدها"],
 			},
 			{
-				name: "Other",
-				items: ["Travel", "Reminders", "Deadlines"],
+				name: "دیگر",
+				items: ["سفر", "یادآوری‌ها", "مهلت‌ها"],
 			},
 		],
 	};
@@ -49,7 +49,7 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton>
 					<PlusIcon />
-					<span>New Calendar</span>
+					<span>تقویم جدید</span>
 				</Sidebar.MenuButton>
 			</Sidebar.MenuItem>
 		</Sidebar.Menu>
