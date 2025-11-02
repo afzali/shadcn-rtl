@@ -17,27 +17,27 @@
     },
     navMain: [
       {
-        title: "Playground",
+        title: "محیط آزمایشی",
         url: "#",
         icon: SquareTerminalIcon,
         isActive: true,
         items: [
           {
-            title: "History",
+            title: "تاریخچه",
             url: "#",
           },
           {
-            title: "Starred",
+            title: "ستاره‌دار",
             url: "#",
           },
           {
-            title: "Settings",
+            title: "تنظیمات",
             url: "#",
           },
         ],
       },
       {
-        title: "Models",
+        title: "مدل‌ها",
         url: "#",
         icon: BotIcon,
         items: [
@@ -56,47 +56,47 @@
         ],
       },
       {
-        title: "Documentation",
+        title: "مستندات",
         url: "#",
         icon: BookOpenIcon,
         items: [
           {
-            title: "Introduction",
+            title: "مقدمه",
             url: "#",
           },
           {
-            title: "Get Started",
+            title: "شروع کنید",
             url: "#",
           },
           {
-            title: "Tutorials",
+            title: "آموزش‌ها",
             url: "#",
           },
           {
-            title: "Changelog",
+            title: "تغییرات نسخه‌ها",
             url: "#",
           },
         ],
       },
       {
-        title: "Settings",
+        title: "تنظیمات",
         url: "#",
         icon: Settings2Icon,
         items: [
           {
-            title: "General",
+            title: "عمومی",
             url: "#",
           },
           {
-            title: "Team",
+            title: "تیم",
             url: "#",
           },
           {
-            title: "Billing",
+            title: "صورتحساب",
             url: "#",
           },
           {
-            title: "Limits",
+            title: "محدودیت‌ها",
             url: "#",
           },
         ],
@@ -104,29 +104,29 @@
     ],
     navSecondary: [
       {
-        title: "Support",
+        title: "پشتیبانی",
         url: "#",
         icon: LifeBuoyIcon,
       },
       {
-        title: "Feedback",
+        title: "بازخورد",
         url: "#",
         icon: SendIcon,
       },
     ],
     projects: [
       {
-        name: "Design Engineering",
+        name: "مهندسی طراحی",
         url: "#",
         icon: FrameIcon,
       },
       {
-        name: "Sales & Marketing",
+        name: "فروش و بازاریابی",
         url: "#",
         icon: PieChartIcon,
       },
       {
-        name: "Travel",
+        name: "سفر",
         url: "#",
         icon: MapIcon,
       },
@@ -154,9 +154,9 @@
               >
                 <CommandIcon class="size-4" />
               </div>
-              <div class="grid flex-1 text-left text-sm leading-tight">
-                <span class="truncate font-medium">Acme Inc</span>
-                <span class="truncate text-xs">Enterprise</span>
+              <div class="grid flex-1 text-right text-sm leading-tight">
+                <span class="truncate font-medium">شرکت آکمی</span>
+                <span class="truncate text-xs">سازمانی</span>
               </div>
             </a>
           {/snippet}

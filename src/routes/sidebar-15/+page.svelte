@@ -17,7 +17,7 @@
 					<Breadcrumb.List>
 						<Breadcrumb.Item>
 							<Breadcrumb.Page class="line-clamp-1">
-								Project Management & Task Tracking
+								مدیریت پروژه و پیگیری وظایف
 							</Breadcrumb.Page>
 						</Breadcrumb.Item>
 					</Breadcrumb.List>
