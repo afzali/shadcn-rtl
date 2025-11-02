@@ -3,10 +3,18 @@ import adapter from '@sveltejs/adapter-static';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({ strict: false }),
+		adapter: adapter({ 
+			strict: false,
+			fallback: 'index.html'
+		}),
+		paths: {
+			base: '/shadcn-rtl'
+		},
 		prerender: {
 			crawl: true,
-			entries: ['/']
+			entries: ['/'],
+			handleHttpError: 'warn',
+			handleMissingId: 'warn'
 		}
 	}
 };
