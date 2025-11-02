@@ -48,32 +48,8 @@
 	>
 		<Dialog.Title class="sr-only">تنظیمات</Dialog.Title>
 		<Dialog.Description class="sr-only">تنظیمات خود را در اینجا سفارشی کنید.</Dialog.Description>
-		<Sidebar.Provider class="items-start">
-			<main class="flex h-[480px] flex-1 flex-col overflow-hidden">
-				<header
-					class="flex h-16 shrink-0 items-center justify-end gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
-				>
-					<div class="flex items-center justify-end gap-2 px-4 text-right">
-						<Breadcrumb.Root>
-							<Breadcrumb.List>
-								<Breadcrumb.Item class="hidden md:block">
-									<Breadcrumb.Link href="#">تنظیمات</Breadcrumb.Link>
-								</Breadcrumb.Item>
-								<Breadcrumb.Separator class="hidden md:block" />
-								<Breadcrumb.Item>
-									<Breadcrumb.Page>پیام‌ها و رسانه</Breadcrumb.Page>
-								</Breadcrumb.Item>
-							</Breadcrumb.List>
-						</Breadcrumb.Root>
-					</div>
-				</header>
-				<div class="flex flex-1 flex-col gap-4 overflow-y-auto p-4 pt-0">
-					{#each Array.from({ length: 10 }) as _, i (i)}
-						<div class="bg-muted/50 aspect-video max-w-3xl rounded-xl"></div>
-					{/each}
-				</div>
-			</main>
-			<Sidebar.Root collapsible="none" class="hidden md:flex" side="right">
+		<Sidebar.Provider class="items-start" side="right">
+			<Sidebar.Root collapsible="none" class="hidden md:flex">
 				<Sidebar.Content>
 					<Sidebar.Group>
 						<Sidebar.GroupContent>
@@ -97,6 +73,30 @@
 					</Sidebar.Group>
 				</Sidebar.Content>
 			</Sidebar.Root>
+			<main class="flex h-[480px] flex-1 flex-col overflow-hidden">
+				<header
+					class="flex h-16 shrink-0 items-center justify-start gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
+				>
+					<div class="flex items-center justify-start gap-2 px-4 text-right">
+						<Breadcrumb.Root>
+							<Breadcrumb.List>
+								<Breadcrumb.Item class="hidden md:block">
+									<Breadcrumb.Link href="#">تنظیمات</Breadcrumb.Link>
+								</Breadcrumb.Item>
+								<Breadcrumb.Separator class="hidden md:block" />
+								<Breadcrumb.Item>
+									<Breadcrumb.Page>پیام‌ها و رسانه</Breadcrumb.Page>
+								</Breadcrumb.Item>
+							</Breadcrumb.List>
+						</Breadcrumb.Root>
+					</div>
+				</header>
+				<div class="flex flex-1 flex-col gap-4 overflow-y-auto p-4 pt-0">
+					{#each Array.from({ length: 10 }) as _, i (i)}
+						<div class="bg-muted/50 aspect-video max-w-3xl rounded-xl"></div>
+					{/each}
+				</div>
+			</main>
 		</Sidebar.Provider>
 	</Dialog.Content>
 </Dialog.Root>
