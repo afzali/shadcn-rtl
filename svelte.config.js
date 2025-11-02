@@ -8,7 +8,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/shadcn-rtl'
+			base: process.env.NODE_ENV === 'production' ? '/shadcn-rtl' : ''
 		},
 		prerender: {
 			crawl: true,
